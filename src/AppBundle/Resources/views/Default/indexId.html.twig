@@ -1,0 +1,20 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+    {% block title %}
+        easy-commerce
+    {% endblock %}
+
+    {% block nav %}
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            {% include 'AppBundle:Comunes:navConLog.html.twig' %}
+        {% else %}
+            {% include 'AppBundle:Comunes:navSinLog.html.twig' %}
+        {% endif %}
+    {% endblock %}
+
+    {% block contenido %}
+
+        <div>nombre tienda: </div>
+        <div><strong>{{ tiendas.nombre }}</strong></div>
+
+    {% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+    {% block title %}
+        easy-commerce admin
+    {% endblock %}
+
+    {% block nav %}
+        {% include 'AppBundle:Comunes:navAdmin.html.twig' %}
+    {% endblock %}
+
+    {% block contenido %}
+
+        {% block menssage %}
+            {% include 'AppBundle:Comunes:flashMessage.html.twig' %}
+        {% endblock %}
+
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="row">
+                            <div class="text-center">
+                                <span class="btn-actions"><!--NUEVO PRODUCTO-->
+                                    <a class="btn btn-success" href="{{ path("appBundle_admin_producto") }}">
+                                        <i class="glyphicon glyphicon-plus"></i> Agregar Producto
+                                    </a>
+                                </span>
+                                <span id="imprimir-listado" class="btn-actions"><!--PDF-->
+                                    <a class="btn btn-danger" href="">
+                                        <i class="glyphicon glyphicon-print "></i> Imprimir listado
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        {% for tienda in tiendas %}
+                            {% if tienda.productos | length == 0 %}
+                                <h3 class='text-center'>
+                                    <i class='fa fa-thumbs-down'></i> No hay productos para mostrar!
+                                </h3>
+                            {% else %}<!--LISTADO PRODUCTO-->
+                                <table id="tabla_lista_post" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Nombre</th>
+                                            <th class="text-center">Categoría</th>
+                                            <th class="text-center">Precio</th>
+                                            <th class="text-center">Cantidad</th>
+                                            <th class="text-center">Fecha</th>
+                                            <th class="text-center" colspan="2">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for producto in tienda.productos %}
+                                            <tr>
+                                                <td class="text-center">{{ producto.nombre }}</td>
+                                                <td class="text-center">{{ producto.categoria }}</td>
+                                                <td class="text-center">{{ producto.precio }}</td>
+                                                <td class="text-center">{{ producto.cantidad }}</td>
+                                                <td class="text-center">{{ producto.fecha | date('d/m/Y - h:m') }}</td>
+                                                <td align="center"><!--EDITAR-->
+                                                    <a href="{{ path("appBundle_admin_producto_cambio",{"username": app.user.username , "id": producto.id}) }}" data-original-title="Edit this user" data-toggle="tooltip" data-placement="top" title="Editar Producto" type="button" class="btn btn-sm btn-success">
+                                                        <i class="glyphicon glyphicon-edit"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% endif %}
+                        {% endfor %}
+
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div><!-- /#page-wrapper -->
+        </div>
+
+    {% endblock %}

@@ -1,0 +1,162 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+    {% block title %}
+        easy-commerce admin
+    {% endblock %}
+
+    {% block nav %}
+        {% include 'AppBundle:Comunes:navAdmin.html.twig' %}
+    {% endblock %}
+
+    {% block contenido %}
+
+    {% block menssage %}
+        {% include 'AppBundle:Comunes:flashMessage.html.twig' %}
+    {% endblock %}
+
+    <div id="wrapper">
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+
+    {# PANEL USUARIO #}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-user fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div>nombre usuario: </div>
+                                        <div><strong>{{ app.user.username }}</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="{{ path('appBundle_admin_user') }}">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Ver Perfil</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+    {# PANEL TIENDA #}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-shopping-cart fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                    {% if tiendas | length == 0 %}
+                                        <div>nombre tienda: </div>
+                                        <div><strong>tienda no creada</strong></div>
+                                    {% else  %}
+                                        {% for tienda in tiendas %}
+                                            <div>nombre tienda: </div>
+                                            <div><strong>{{ tienda.nombre }}</strong></div>
+                                        {% endfor %}
+                                    {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% if tiendas | length == 0 %}
+                                <a href="{{ path("appBundle_admin_tienda") }}">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">Crear Tienda</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            {% else  %}
+                                {% for tienda in tiendas %}
+                                <a href="{{ path('appBundle_admin_tienda_perfil') }}">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">Perfil Tienda</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+
+    {# PANEL PRODUCTO #}
+                    {% for tienda in tiendas %}
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-yellow">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-gift fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            {% if tienda.productos | length == 0 %}
+                                                <div>número de productos: </div>
+                                                <div><strong>0</strong></div>
+                                            {% else %}
+                                                <div>número de productos: </div>
+                                                <div><strong>{{ tienda.productos | length }}</strong></div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% if tienda.productos | length == 0 %}
+                                    <a href="{{ path("appBundle_admin_producto") }}">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">Añadir Primer Producto</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                {% else %}
+                                    <a href="{{ path("appBundle_admin_producto_lista") }}">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">Ver Lista Productos</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+    {# PANEL DUDA #}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-support fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">¿?</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+
+{% endblock %}

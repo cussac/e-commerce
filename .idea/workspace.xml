@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2afc9d1a-9fcf-409c-b461-8e0a1ff48150" name="Default" comment="" />
+    <ignored path="e-commerce.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="e-commerce" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="TiendaController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TiendaController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="84" column="8" selection-start="2319" selection-end="2392" vertical-scroll-proportion="6.0740743" vertical-offset="1442" max-vertical-offset="3132">
+              <folding>
+                <element signature="e#2125#2161#0" expanded="true" />
+                <element signature="e#2809#2837#0" expanded="true" />
+                <element signature="e#3107#3135#0" expanded="true" />
+                <element signature="e#3320#3348#0" expanded="true" />
+                <element signature="e#4639#4675#0" expanded="true" />
+                <element signature="e#5025#5072#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductoController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProductoController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="92" column="16" selection-start="2778" selection-end="2906" vertical-scroll-proportion="11.407408" vertical-offset="1802" max-vertical-offset="3168">
+              <folding>
+                <element signature="e#2106#2144#0" expanded="true" />
+                <element signature="e#2799#2827#0" expanded="true" />
+                <element signature="e#3105#3133#0" expanded="true" />
+                <element signature="e#3320#3348#0" expanded="true" />
+                <element signature="e#4653#4691#0" expanded="true" />
+                <element signature="e#5382#5430#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="12" selection-start="2676" selection-end="2676" vertical-scroll-proportion="0.9564165" vertical-offset="434" max-vertical-offset="5202">
+              <folding>
+                <element signature="e#1074#1109#0" expanded="true" />
+                <element signature="e#2447#2464#1" expanded="true" />
+                <element signature="e#2734#2754#1" expanded="true" />
+                <element signature="e#2812#2850#0" expanded="true" />
+                <element signature="e#3461#3489#0" expanded="true" />
+                <element signature="e#3810#3838#0" expanded="true" />
+                <element signature="e#4045#4073#0" expanded="true" />
+                <element signature="e#4260#4288#0" expanded="true" />
+                <element signature="e#4964#4986#1" expanded="true" />
+                <element signature="e#5250#5272#1" expanded="true" />
+                <element signature="e#5491#5536#0" expanded="true" />
+                <element signature="e#6102#6130#0" expanded="true" />
+                <element signature="e#6451#6479#0" expanded="true" />
+                <element signature="e#6686#6714#0" expanded="true" />
+                <element signature="e#6901#6929#0" expanded="true" />
+                <element signature="e#7988#8010#1" expanded="true" />
+                <element signature="e#8274#8296#1" expanded="true" />
+                <element signature="e#8513#8558#0" expanded="true" />
+                <element signature="e#8896#8937#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/adminPerfilTienda.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Comunes/navAdmin.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/adminIndex.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Comunes/404.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/TiendaController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProductoController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
+    <option name="y" value="26" />
+    <option name="width" value="1918" />
+    <option name="height" value="1036" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-commerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-commerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-commerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="settings.github" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/AppBundle/Resources/views/Comunes" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2afc9d1a-9fcf-409c-b461-8e0a1ff48150" name="Default" comment="" />
+      <created>1458041893791</created>
+      <updated>1458041893791</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1" y="26" width="1918" height="1036" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14194237" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Symfony2" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/indexId.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="4" selection-start="378" selection-end="399" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="468">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Comunes/404.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="6" selection-start="737" selection-end="737" vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="630">
+          <folding>
+            <element signature="e#12#39#0" expanded="false" />
+            <element signature="e#211#248#0" expanded="false" />
+            <element signature="e#296#333#0" expanded="false" />
+            <element signature="e#794#818#0" expanded="false" />
+            <element signature="e#1016#1034#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/adminIndex.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="20" selection-start="530" selection-end="561" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="3006">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TiendaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="51" selection-start="2896" selection-end="2896" vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="3312">
+          <folding>
+            <element signature="e#2125#2161#0" expanded="true" />
+            <element signature="e#2809#2837#0" expanded="true" />
+            <element signature="e#3107#3135#0" expanded="true" />
+            <element signature="e#3320#3348#0" expanded="true" />
+            <element signature="e#4639#4675#0" expanded="true" />
+            <element signature="e#5025#5072#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Tienda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6030">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/adminListaProducto.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="20" selection-start="155" selection-end="155" vertical-scroll-proportion="0.15498155" vertical-offset="0" max-vertical-offset="1548" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/adminPassCambio.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="20" selection-start="311" selection-end="311" vertical-scroll-proportion="0.32687652" vertical-offset="0" max-vertical-offset="1296" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/adminPerfil.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="20" selection-start="162" selection-end="162" vertical-scroll-proportion="0.15254237" vertical-offset="0" max-vertical-offset="1512" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/adminPerfilTienda.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="20" selection-start="162" selection-end="162" vertical-scroll-proportion="0.15254237" vertical-offset="0" max-vertical-offset="2430" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/adminUserCambio.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="20" selection-start="319" selection-end="319" vertical-scroll-proportion="0.32687652" vertical-offset="0" max-vertical-offset="1602" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/producto.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="20" selection-start="322" selection-end="322" vertical-scroll-proportion="0.32687652" vertical-offset="0" max-vertical-offset="1368" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/tienda.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="20" selection-start="320" selection-end="320" vertical-scroll-proportion="0.32687652" vertical-offset="0" max-vertical-offset="1422" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Comunes/navAdmin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="20" selection-start="2323" selection-end="2323" vertical-scroll-proportion="-20.0" vertical-offset="378" max-vertical-offset="1404" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/adminIndex.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="20" selection-start="530" selection-end="561" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="3006">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="46" selection-start="743" selection-end="743" vertical-scroll-proportion="0.6541618" vertical-offset="0" max-vertical-offset="1368">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Comunes/404.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="25" selection-start="92" selection-end="92" vertical-scroll-proportion="0.065375306" vertical-offset="0" max-vertical-offset="826">
+          <folding>
+            <element signature="e#12#39#0" expanded="false" />
+            <element signature="e#211#248#0" expanded="false" />
+            <element signature="e#296#333#0" expanded="false" />
+            <element signature="e#794#818#0" expanded="false" />
+            <element signature="e#1016#1034#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/indexId.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="4" selection-start="113" selection-end="372" vertical-scroll-proportion="0.13075061" vertical-offset="0" max-vertical-offset="826">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProductoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="16" selection-start="2778" selection-end="2906" vertical-scroll-proportion="11.407408" vertical-offset="1802" max-vertical-offset="3168">
+          <folding>
+            <element signature="e#2106#2144#0" expanded="true" />
+            <element signature="e#2799#2827#0" expanded="true" />
+            <element signature="e#3105#3133#0" expanded="true" />
+            <element signature="e#3320#3348#0" expanded="true" />
+            <element signature="e#4653#4691#0" expanded="true" />
+            <element signature="e#5382#5430#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TiendaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="8" selection-start="2319" selection-end="2392" vertical-scroll-proportion="6.0740743" vertical-offset="1442" max-vertical-offset="3132">
+          <folding>
+            <element signature="e#2125#2161#0" expanded="true" />
+            <element signature="e#2809#2837#0" expanded="true" />
+            <element signature="e#3107#3135#0" expanded="true" />
+            <element signature="e#3320#3348#0" expanded="true" />
+            <element signature="e#4639#4675#0" expanded="true" />
+            <element signature="e#5025#5072#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="12" selection-start="2676" selection-end="2676" vertical-scroll-proportion="0.9564165" vertical-offset="434" max-vertical-offset="5202">
+          <folding>
+            <element signature="e#1074#1109#0" expanded="true" />
+            <element signature="e#2447#2464#1" expanded="true" />
+            <element signature="e#2734#2754#1" expanded="true" />
+            <element signature="e#2812#2850#0" expanded="true" />
+            <element signature="e#3461#3489#0" expanded="true" />
+            <element signature="e#3810#3838#0" expanded="true" />
+            <element signature="e#4045#4073#0" expanded="true" />
+            <element signature="e#4260#4288#0" expanded="true" />
+            <element signature="e#4964#4986#1" expanded="true" />
+            <element signature="e#5250#5272#1" expanded="true" />
+            <element signature="e#5491#5536#0" expanded="true" />
+            <element signature="e#6102#6130#0" expanded="true" />
+            <element signature="e#6451#6479#0" expanded="true" />
+            <element signature="e#6686#6714#0" expanded="true" />
+            <element signature="e#6901#6929#0" expanded="true" />
+            <element signature="e#7988#8010#1" expanded="true" />
+            <element signature="e#8274#8296#1" expanded="true" />
+            <element signature="e#8513#8558#0" expanded="true" />
+            <element signature="e#8896#8937#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

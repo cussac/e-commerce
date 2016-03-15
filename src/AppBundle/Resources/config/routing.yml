@@ -1,0 +1,70 @@
+appBundle_homepage:
+    path:     /{id}
+    defaults: { _controller: AppBundle:Default:index, id:-1 }
+    requirements:
+        id: \d+
+
+appBundle_login:
+    path:    /login
+    defaults: { _controller: AppBundle:User:login }
+
+appBundle_login_check:
+    path:    /login_check
+
+appBundle_logout:
+    path:    /logout
+
+appBundle_registro:
+    path:    /registro/
+    defaults: { _controller: AppBundle:User:registro }
+
+#ruta area privada#
+
+appBundle_admin_homepage:
+    path:     /admin/
+    defaults: { _controller: AppBundle:Default:adminIndex }
+
+appBundle_admin_tienda:
+    path: /admin/formulario/tienda/
+    defaults: { _controller: AppBundle:Tienda:formulario}
+
+appBundle_admin_tienda_cambio:
+    path: /admin/formulario/tienda/{username}/{id}
+    defaults: { _controller: AppBundle:Tienda:formularioCambio, id:-1}
+    requirements:
+        id: \d+
+
+appBundle_admin_tienda_perfil:
+    path: /admin/perfil/tienda/
+    defaults: {_controller: AppBundle:Tienda:perfil }
+
+appBundle_admin_user:
+    path: /admin/perfil/
+    defaults: {_controller: AppBundle:User:perfil }
+
+appBundle_admin_user_cambio:
+    path: /admin/perfil/cambio/{username}/{id}
+    defaults: {_controller: AppBundle:User:registroCambio, id:-1}
+    requirements:
+            id: \d+
+
+appBundle_admin_user_pass:
+    path: /admin/perfil/cambio/pass/{username}/{id}
+    defaults: {_controller: AppBundle:User:passCambio, id:-1}
+    requirements:
+            id: \d+
+
+appBundle_admin_producto:
+    path: /admin/formulario/producto/
+    defaults: { _controller: AppBundle:Producto:formulario}
+
+appBundle_admin_producto_lista:
+    path: /admin/lista/producto/
+    defaults: {_controller: AppBundle:Producto:lista }
+
+appBundle_admin_producto_cambio:
+    path: /admin/formulario/producto/{username}/{id}
+    defaults: { _controller: AppBundle:Producto:formularioCambio, id:-1}
+    requirements:
+        id: \d+
+

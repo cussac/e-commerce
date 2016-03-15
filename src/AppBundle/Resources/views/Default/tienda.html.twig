@@ -1,0 +1,74 @@
+{% extends 'AppBundle::layoutForm.html.twig' %}
+
+    {% block title %}
+        easy-commerce registro tienda
+    {% endblock %}
+
+    {% block panel %}
+        <div class="panel panel-green">
+    {% endblock %}
+
+    {% block titulo %}
+        Formulario Tienda
+    {% endblock %}
+
+    {% block nav %}
+        {% include 'AppBundle:Comunes:navAdmin.html.twig' %}
+    {% endblock %}
+
+    {% block formulario %}
+
+        <form id="registerForm"  action="" method="post" {{ form_enctype(form) }}>
+
+            <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-shopping-cart"></i>
+                        </span>
+                {{ form_row(form.nombre) }}
+            </div>
+            <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-comment"></i>
+                        </span>
+                {{ form_row(form.descripcion) }}
+            </div>
+            <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-th-list"></i>
+                        </span>
+                {{ form_row(form.categoria) }}
+            </div>
+
+            <h3>REDES SOCIALES</h3>
+
+            <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-facebook fa-fw fa-1x"></i>
+                        </span>
+                {{ form_row(form.facebook) }}
+            </div>
+            <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-twitter fa-fw fa-1x"></i>
+                        </span>
+                {{ form_row(form.twitter) }}
+            </div>
+            <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-instagram fa-fw fa-1x"></i>
+                        </span>
+                {{ form_row(form.instagram) }}
+            </div>
+
+            <hr class="colorgraph">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <input type='submit' class='btn btn-lg btn-success btn-block ' name='_registrar' value='Registrarme'>
+                </div>
+            </div>
+
+            {{ form_rest(form) }}
+        </form>
+
+    {% endblock %}

@@ -1,0 +1,130 @@
+{% extends 'AppBundle::layoutPerfil.html.twig' %}
+
+    {% block title %}
+        easy-commerce perfil
+    {% endblock %}
+
+    {% block nav %}
+        {% include 'AppBundle:Comunes:navAdmin.html.twig' %}
+    {% endblock %}
+
+    {% block panel %}
+        <div class="panel panel-success">
+    {% endblock %}
+
+    {% block titulo %}
+        <h3 class="panel-title">Perfil tienda</h3>
+    {% endblock %}
+
+    {% block img %}
+        <div class="col-md-12 col-lg-12 " align="center">
+            <img alt="User Pic" src="{{ asset('uploads/documents/bg.png') }}" class="img-circle" width="100">
+        </div><!--/col-md-3 col-lg-3 -->
+    {% endblock %}
+
+    {% block table %}
+        {% for tienda in tiendas %}
+            <tbody>
+
+                <tr>
+                    <td>
+                        <strong>Nombre:</strong>
+                    </td>
+                    <td>
+                        {{ tienda.nombre }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>Descripción:</strong>
+                    </td>
+                    <td>
+                        {{ tienda.descripcion }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>Categoría:</strong>
+                    </td>
+                    <td>
+                        {{ tienda.categoria }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>Fecha Registro:</strong>
+                    </td>
+                    <td>
+                        {{ tienda.fecha|date('d/m/Y - H:i') }}
+                    </td>
+                </tr>
+
+                {% if tienda.facebook | length == 0 %}
+                    <tr>
+                        <td>
+                            <strong>Facebook:</strong>
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>
+                            <strong>Facebook:</strong>
+                        </td>
+                        <td>
+                            <a href="{{ tienda.facebook }}">{{ tienda.facebook }}</a>
+                        </td>
+                    </tr>
+                {% endif %}
+
+                {% if tienda.twitter | length == 0 %}
+                    <tr>
+                        <td>
+                            <strong>Twitter:</strong>
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>
+                            <strong>Twitter:</strong>
+                        </td>
+                        <td>
+                            <a href="{{ tienda.twitter }}">{{ tienda.twitter }}</a>
+                        </td>
+                    </tr>
+                {% endif %}
+
+                {% if tienda.instagram | length == 0 %}
+                    <tr>
+                        <td>
+                            <strong>Instagram:</strong>
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>
+                            <strong>Instagram:</strong>
+                        </td>
+                        <td>
+                            <a href="{{ tienda.instagram }}">{{ tienda.instagram }}</a>
+                        </td>
+                    </tr>
+                {% endif %}
+
+            </tbody>
+            <div class="input-group">
+                <a href="{{ path('appBundle_admin_tienda_cambio',{"username":app.user.username,"id":tienda.id}) }}">Modificar datos</a>
+            </div>
+        {% endfor %}
+    {% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+    {% block title %}
+        easy-commerce 404
+    {% endblock %}
+
+    {% block nav %}
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            {% include 'AppBundle:Comunes:navConLog.html.twig' %}
+        {% else %}
+            {% include 'AppBundle:Comunes:navSinLog.html.twig' %}
+        {% endif %}
+    {% endblock %}
+
+    {% block contenido %}
+
+        <!-- Inicio section.main -->
+
+        <div class="text-center">
+            <h1 class="error-404">Oops!</h1>
+            <h4>404 {% if mensaje is defined %}{{ mensaje }}{% else %}Página no encontrada{% endif %}</h4>
+            <p>Lo siento, al parecer la página que buscas no existe!</p>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a href="{{ path("appBundle_admin_homepage") }}" class="btn btn-primary">
+                    <i class="glyphicon glyphicon-chevron-left"></i>  Regresar al admin
+                </a>
+            {% else %}
+                <a href="{{ path("appBundle_homepage") }}" class="btn btn-primary">
+                    <i class="glyphicon glyphicon-chevron-left"></i>  Regresar al inicio
+                </a>
+            {% endif %}
+        </div>
+
+        <!-- /section.main -->
+
+    {% endblock %}
+
+
