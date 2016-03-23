@@ -19,15 +19,22 @@ class DefaultController extends Controller
      * @Route("/", name="homepage")
      */
 
-    public function indexAction(Request $request, $id)
+    public function indexAction($id)
     {
-
+        $repositoryTienda = $this ->getDoctrine()->getRepository("AppBundle:Tienda");
         $em = $this->getDoctrine()->getManager();
 
         $params['id'] = $id;
 
         if ($id === -1)
-            return $this->render('AppBundle:Default:index.html.twig');
+        {
+            $tiendas = $repositoryTienda->findAll();
+
+            $params = array(
+                'tiendas' => $tiendas,
+            );
+            return $this->render('AppBundle:Default:index.html.twig',$params);
+        }
         else
         {
             $tiendas = $em->getRepository('AppBundle:Tienda')
