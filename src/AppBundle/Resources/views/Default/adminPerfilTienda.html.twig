@@ -17,9 +17,15 @@
     {% endblock %}
 
     {% block img %}
-        <div class="col-md-12 col-lg-12 " align="center">
-            <img alt="User Pic" src="{{ asset('uploads/documents/bg.png') }}" class="img-circle" width="100">
+        {% for tienda in tiendas %}
+        <div class="col-md-3 col-lg-3 " align="center">
+            {% if  tienda.path == NULL %}<!--SI EL USUARIO NO TIENE IMG-->
+                <img alt="User Pic" src="{{ asset('uploads/documents/bg.png') }}" class="img-circle" width="100">
+            {% else %}
+                <img alt="User Pic" src="{{ asset('uploads/documents/'~ tienda.path) }}" class="img-circle" width="100">
+            {% endif %}
         </div><!--/col-md-3 col-lg-3 -->
+        {% endfor %}
     {% endblock %}
 
     {% block table %}
@@ -49,7 +55,7 @@
                         <strong>Categoría:</strong>
                     </td>
                     <td>
-                        {{ tienda.categoria }}
+                        {{ tienda.categoria | upper }}
                     </td>
                 </tr>
 

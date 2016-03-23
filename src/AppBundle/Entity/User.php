@@ -170,11 +170,6 @@ class User implements UserInterface
      */
     protected $termsAccepted;
     /**
-     * Get id
-     *
-     * @return integer
-     */
-    /**
      * @Assert\File(maxSize="6000000")
      */
     private $file;
@@ -182,6 +177,12 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     public $path;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
     public function getId()
     {
         return $this->id;
@@ -565,6 +566,7 @@ class User implements UserInterface
     {
         return $this->tiendas;
     }
+
     /****IMAGENES****/
     /**
      * Sets file.
