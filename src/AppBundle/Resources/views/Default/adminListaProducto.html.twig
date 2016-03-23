@@ -45,6 +45,7 @@
                                 <table id="tabla_lista_post" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
+                                            <th class="text-center">Imagen</th>
                                             <th class="text-center">Nombre</th>
                                             <th class="text-center">Categoría</th>
                                             <th class="text-center">Precio</th>
@@ -56,6 +57,15 @@
                                     <tbody>
                                         {% for producto in tienda.productos %}
                                             <tr>
+                                                {% if  producto.path == NULL %}
+                                                <td class="text-center">
+                                                    <img alt="User Pic" src="{{ asset('uploads/documents/bg.png') }}" class="img-rounded" width="50">
+                                                </td>
+                                                {% else %}
+                                                <td class="text-center">
+                                                    <img alt="User Pic" src="{{ asset('uploads/documents/'~ producto.path) }}" class="img-rounded" width="40">
+                                                </td>
+                                                {% endif %}
                                                 <td class="text-center">{{ producto.nombre }}</td>
                                                 <td class="text-center">{{ producto.categoria }}</td>
                                                 <td class="text-center">{{ producto.precio }}</td>

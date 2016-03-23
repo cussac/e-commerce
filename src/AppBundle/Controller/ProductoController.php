@@ -45,10 +45,10 @@ class ProductoController extends Controller
 
                 $this->get('session')->getFlashBag()->add(
                     'success',
-                    ' Ya estás registrado como:<strong> '.$producto->getNombre().'</strong>.'
+                    ' Producto registrado como:<strong> '.$producto->getNombre().'</strong>.'
                 );
 
-                return $this->redirect($this->generateUrl('appBundle_admin_homepage'));
+                return $this->redirect($this->generateUrl('appBundle_admin_producto_lista'));
 
             }
             else

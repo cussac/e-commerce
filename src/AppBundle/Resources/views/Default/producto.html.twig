@@ -21,6 +21,12 @@
     <form id="registerForm"  action="" method="post" {{ form_enctype(form) }}>
 
         <div class="input-group">
+                    <span class="input-group-addon ">
+                        <i class="glyphicon glyphicon-picture"></i>
+                    </span>
+            {{ form_row(form.file) }}
+        </div>
+        <div class="input-group">
             <span class="input-group-addon">
                 <i class="glyphicon glyphicon-shopping-cart"></i>
             </span>
