@@ -121,10 +121,18 @@
                         </td>
                     </tr>
                 {% endif %}
+                <tr>
+                    <td class="col-md-3 col-md-offset-3"></td>
+                    <td class="col-md-3 col-md-offset-3">
+                    <span>
+                        <a class="btn btn-success" href="{{ path('appBundle_admin_tienda_cambio',{"username":app.user.username,"id":tienda.id}) }}">
+                            <i class="glyphicon glyphicon-edit"></i> Editar Tienda
+                        </a>
+                    </span>
+                    </td>
+                </tr>
 
             </tbody>
-            <div class="input-group">
-                <a href="{{ path('appBundle_admin_tienda_cambio',{"username":app.user.username,"id":tienda.id}) }}">Modificar datos</a>
-            </div>
+
         {% endfor %}
     {% endblock %}

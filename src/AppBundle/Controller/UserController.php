@@ -12,12 +12,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\User;
 use AppBundle\Form\UserType;
 use AppBundle\Form\PerfilType;
 use AppBundle\Form\PassType;
+
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+
 
 
 class UserController extends Controller
@@ -79,7 +82,7 @@ class UserController extends Controller
             {
                 $this->get('session')->getFlashBag()->add(
                     'error',
-                    'Error, revise los campos del formulario'
+                    ' Error, revise los campos del formulario'
                 );
                 $this->redirect($this->generateUrl("appBundle_registro"));
             }

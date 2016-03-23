@@ -22,37 +22,44 @@
 
                 <div class="input-group">
                     <span class="input-group-addon">
-
+                       <i class="glyphicon"><strong>N </strong></i> *
                     </span>
                     {{ form_row(form.nombre) }}
                 </div>
 
                 <div class="input-group">
                     <span class="input-group-addon">
-
+                        <strong>A1</strong>*
                     </span>
                     {{ form_row(form.apellido1) }}
                 </div>
 
                 <div class="input-group">
                     <span class="input-group-addon">
-
+                        A2
                     </span>
                     {{ form_row(form.apellido2) }}
                 </div>
 
                 <div class="input-group">
                     <span class="input-group-addon">
-                        <i class="glyphicon glyphicon-envelope"></i>
+                        <i class="glyphicon glyphicon-envelope"></i> *
                     </span>
                     {{ form_row(form.email) }}
                 </div>
 
                 <div class="input-group">
                     <span class="input-group-addon">
-                        <i class="glyphicon glyphicon-user"></i>
+                        <i class="glyphicon glyphicon-user"></i> *
                     </span>
                     {{ form_row(form.username) }}
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon ">
+                        <i class="glyphicon glyphicon-picture"></i>
+                    </span>
+                    {{ form_row(form.file) }}
                 </div>
 
                 <div class="hide">
@@ -66,8 +73,14 @@
 
                 <hr class="colorgraph">
 
-                <div class="input-group">
-                    <a href="{{ path('appBundle_admin_user_pass',{"username":app.user.username,"id":app.user.id}) }}">Cambiar contraseña</a>
+                <div class="row">
+                    <div class="text-center">
+                        <span class="btn-actions"><!--NUEVO PRODUCTO-->
+                            <a class="btn btn-success" href="{{ path('appBundle_admin_user_pass',{"username":app.user.username,"id":app.user.id}) }}">
+                                <i class="glyphicon glyphicon-edit"></i> Editar Contraseña
+                            </a>
+                        </span>
+                    </div>
                 </div>
 
                 <hr class="colorgraph">

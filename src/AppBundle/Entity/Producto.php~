@@ -265,4 +265,27 @@ class Producto
     {
         return $this->tienda;
     }
+
+    /**
+     * Set categoria
+     *
+     * @param string $categoria
+     * @return Producto
+     */
+    public function setCategoria($categoria)
+    {
+        $this->categoria = $categoria;
+
+        return $this;
+    }
+
+    /**
+     * Get categoria
+     *
+     * @return string 
+     */
+    public function getCategoria()
+    {
+        return $this->categoria;
+    }
 }

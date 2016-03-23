@@ -51,6 +51,14 @@ class PerfilType extends AbstractType
                     'class'=>'form-control',
                 ),
             ))
+            ->add('file','file',array(
+                'label' => false,
+                'required'=> false,
+                'attr'  => array(
+                    'placeholder'=>'Foto de perfil',
+                    'class'=>'form-control',
+                ),
+            ))
             ->add('password', 'repeated', array(
                 'label'          => false,
                 'type'           => 'text',

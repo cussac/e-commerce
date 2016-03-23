@@ -1,37 +1,38 @@
 <?php
-
 namespace AppBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\Role\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\Common\Collections\ArrayCollection;
-
-
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * User
  *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
- * @ORM\HasLifecycleCallbacks()
+ * @ORM\HasLifecycleCallbacks
+ * @UniqueEntity(fields="username", message="Nombre de usuario no disponible")
+ * @UniqueEntity(fields="email", message="Este email ya esta registrado")
  */
 class User implements UserInterface
 {
+
     /**
      * @ORM\OneToMany(targetEntity="Tienda", mappedBy="user", orphanRemoval=true)
      */
     private $tiendas;
-
     public function __construct()
     {
         $this->tiendas = new ArrayCollection();
-
         $this->setFecha(new\DateTime(date('y-n-d H:i:s')));
         $this->setTokenRegistro($this->randomString());
         $this->setSalt($this->randomString());
         $this->setIsActive(true);
     }
+
+    private $temp;
 
     /**
      * @var int
@@ -41,7 +42,6 @@ class User implements UserInterface
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var string
      *
@@ -59,7 +59,6 @@ class User implements UserInterface
      *      message="El campo NOMBRE: sólo puede contener letras")
      */
     private $nombre;
-
     /**
      * @var string
      *
@@ -77,7 +76,6 @@ class User implements UserInterface
      *      message="El campo PRIMER APELLIDO: sólo puede contener letras")
      */
     private $apellido1;
-
     /**
      * @var string
      *
@@ -92,7 +90,6 @@ class User implements UserInterface
      *      message="El campo SEGUNDO APELLIDO: sólo puede contener letras")
      */
     private $apellido2;
-
     /**
      * @var string
      *
@@ -102,7 +99,6 @@ class User implements UserInterface
      * @Assert\Email(message = "El email {{ value }} no es válido.")
      */
     private $email;
-
     /**
      * @var string
      *
@@ -121,7 +117,6 @@ class User implements UserInterface
      *      message="El campo NOMBRE DE USUARIO: sólo caracteres alfanuméricos y guiones")
      */
     private $username;
-
     /**
      * @var string
      *
@@ -139,59 +134,58 @@ class User implements UserInterface
      * )
      */
     private $password;
-
     /**
      * @var string
      *
      * @ORM\Column(name="rol", type="string", length=30)
      */
     private $rol;
-
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="fecha", type="datetime")
      */
     private $fecha;
-
     /**
      * @var string
      *
      * @ORM\Column(name="salt", type="string", length=255)
      */
     private $salt;
-
     /**
      * @var bool
      *
      * @ORM\Column(name="isActive", type="boolean")
      */
     private $isActive;
-
     /**
      * @var string
      *
      * @ORM\Column(name="tokenRegistro", type="string", length=255)
      */
     private $tokenRegistro;
-
     /**
      * @Assert\NotBlank()
      * @Assert\True()
      */
     protected $termsAccepted;
-
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
+    /**
+     * @Assert\File(maxSize="6000000")
+     */
+    private $file;
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    public $path;
     public function getId()
     {
         return $this->id;
     }
-
     /**
      * Set nombre
      *
@@ -201,20 +195,17 @@ class User implements UserInterface
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
-
         return $this;
     }
-
     /**
      * Get nombre
      *
-     * @return string 
+     * @return string
      */
     public function getNombre()
     {
         return $this->nombre;
     }
-
     /**
      * Set apellido1
      *
@@ -224,20 +215,17 @@ class User implements UserInterface
     public function setApellido1($apellido1)
     {
         $this->apellido1 = $apellido1;
-
         return $this;
     }
-
     /**
      * Get apellido1
      *
-     * @return string 
+     * @return string
      */
     public function getApellido1()
     {
         return $this->apellido1;
     }
-
     /**
      * Set apellido2
      *
@@ -247,20 +235,17 @@ class User implements UserInterface
     public function setApellido2($apellido2)
     {
         $this->apellido2 = $apellido2;
-
         return $this;
     }
-
     /**
      * Get apellido2
      *
-     * @return string 
+     * @return string
      */
     public function getApellido2()
     {
         return $this->apellido2;
     }
-
     /**
      * Set email
      *
@@ -270,20 +255,17 @@ class User implements UserInterface
     public function setEmail($email)
     {
         $this->email = $email;
-
         return $this;
     }
-
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
         return $this->email;
     }
-
     /**
      * Set username
      *
@@ -293,20 +275,17 @@ class User implements UserInterface
     public function setUsername($username)
     {
         $this->username = $username;
-
         return $this;
     }
-
     /**
      * Get username
      *
-     * @return string 
+     * @return string
      */
     public function getUsername()
     {
         return $this->username;
     }
-
     /**
      * Set password
      *
@@ -316,20 +295,17 @@ class User implements UserInterface
     public function setPassword($password)
     {
         $this->password = $password;
-
         return $this;
     }
-
     /**
      * Get password
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
         return $this->password;
     }
-
     /**
      * Set rol
      *
@@ -339,20 +315,17 @@ class User implements UserInterface
     public function setRol($rol)
     {
         $this->rol = $rol;
-
         return $this;
     }
-
     /**
      * Get rol
      *
-     * @return string 
+     * @return string
      */
     public function getRol()
     {
         return $this->rol;
     }
-
     /**
      * Set fecha
      *
@@ -362,20 +335,17 @@ class User implements UserInterface
     public function setFecha($fecha)
     {
         $this->fecha = $fecha;
-
         return $this;
     }
-
     /**
      * Get fecha
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getFecha()
     {
         return $this->fecha;
     }
-
     /**
      * Set salt
      *
@@ -385,20 +355,17 @@ class User implements UserInterface
     public function setSalt($salt)
     {
         $this->salt = $salt;
-
         return $this;
     }
-
     /**
      * Get salt
      *
-     * @return string 
+     * @return string
      */
     public function getSalt()
     {
         return $this->salt;
     }
-
     /**
      * Set isActive
      *
@@ -408,20 +375,17 @@ class User implements UserInterface
     public function setIsActive($isActive)
     {
         $this->isActive = $isActive;
-
         return $this;
     }
-
     /**
      * Get isActive
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getIsActive()
     {
         return $this->isActive;
     }
-
     /**
      * Set tokenRegistro
      *
@@ -431,35 +395,29 @@ class User implements UserInterface
     public function setTokenRegistro($tokenRegistro)
     {
         $this->tokenRegistro = $tokenRegistro;
-
         return $this;
     }
-
     /**
      * Get tokenRegistro
      *
-     * @return string 
+     * @return string
      */
     public function getTokenRegistro()
     {
         return $this->tokenRegistro;
     }
-
     function equals(UserInterface $user)
     {
         return $user->getUsername() === $this->username;
     }
-
     public function getTermsAccepted()
     {
         return $this->termsAccepted;
     }
-
     public function setTermsAccepted($termsAccepted)
     {
         $this->termsAccepted = (Boolean) $termsAccepted;
     }
-
     /**
      * Checks whether the user is locked.
      *
@@ -474,7 +432,6 @@ class User implements UserInterface
     {
         return true;
     }
-
     /**
      * Checks whether the user's credentials (password) has expired.
      *
@@ -489,7 +446,6 @@ class User implements UserInterface
     {
         return true;
     }
-
     /**
      * Checks whether the user is enabled.
      *
@@ -504,7 +460,6 @@ class User implements UserInterface
     {
         return $this->getIsActive();
     }
-
     /**
      * Checks whether the user's account has expired.
      *
@@ -519,7 +474,6 @@ class User implements UserInterface
     {
         return true;
     }
-
     /**
      * Removes sensitive data from the user.
      *
@@ -530,7 +484,6 @@ class User implements UserInterface
     {
         // TODO: Implement eraseCredentials() method.
     }
-
     /**
      * Returns the roles granted to the user.
      *
@@ -551,7 +504,6 @@ class User implements UserInterface
     {
         return array($this->getRol());
     }
-
     /****** CUSTOM METHOD ********/
     private function randomString($length = 20)
     {
@@ -562,10 +514,8 @@ class User implements UserInterface
         for ($i = 0; $i < $length; $i++) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
-
         return $randomString;
     }
-
     /**
      * Set tienda
      *
@@ -575,20 +525,17 @@ class User implements UserInterface
     public function setTienda(\AppBundle\Entity\Tienda $tienda = null)
     {
         $this->tienda = $tienda;
-
         return $this;
     }
-
     /**
      * Get tienda
      *
-     * @return \AppBundle\Entity\Tienda 
+     * @return \AppBundle\Entity\Tienda
      */
     public function getTienda()
     {
         return $this->tienda;
     }
-
     /**
      * Add tienda
      *
@@ -598,10 +545,8 @@ class User implements UserInterface
     public function addTienda(\AppBundle\Entity\Tienda $tienda)
     {
         $this->tienda[] = $tienda;
-
         return $this;
     }
-
     /**
      * Remove tienda
      *
@@ -611,14 +556,134 @@ class User implements UserInterface
     {
         $this->tienda->removeElement($tienda);
     }
-
     /**
      * Get tiendas
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTiendas()
     {
         return $this->tiendas;
+    }
+    /****IMAGENES****/
+    /**
+     * Sets file.
+     *
+     * @param UploadedFile $file
+     */
+    public function setFile(UploadedFile $file = null)
+    {
+        $this->file = $file;
+        // check if we have an old image path
+        if (isset($this->path)) {
+            // store the old name to delete after the update
+            $this->temp = $this->path;
+            $this->path = null;
+        } else {
+            $this->path = 'initial';
+        }
+    }
+    /**
+     * Get file.
+     *
+     * @return UploadedFile
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+    public function getAbsolutePath()
+    {
+        return null === $this->path
+            ? null
+            : $this->getUploadRootDir().'/'.$this->id.'.'.$this->path;
+    }
+    public function getWebPath()
+    {
+        return null === $this->path
+            ? null
+            : $this->getUploadDir().'/'.$this->path;
+    }
+    protected function getUploadRootDir()
+    {
+        // la ruta absoluta del directorio donde se deben
+        // guardar los archivos cargados
+        return __DIR__.'/../../../web/'.$this->getUploadDir();
+    }
+    protected function getUploadDir()
+    {
+        // se deshace del __DIR__ para no meter la pata
+        // al mostrar el documento/imagen cargada en la vista.
+        return 'uploads/documents';
+    }
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function preUpload()
+    {
+        if (null !== $this->getFile()) {
+            // haz lo que quieras para generar un nombre único
+            $filename = sha1(uniqid(mt_rand(), true));
+            $this->path = $filename.'.'.$this->getFile()->guessExtension();
+        }
+    }
+    /**
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
+     */
+    public function upload()
+    {
+        if (null === $this->getFile()) {
+            return;
+        }
+        // si hay un error al mover el archivo, move() automáticamente
+        // envía una excepción. This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->getFile()->move($this->getUploadRootDir(), $this->path);
+        // check if we have an old image
+        if (isset($this->temp)) {
+            // delete the old image
+            unlink($this->getUploadRootDir().'/'.$this->temp);
+            // clear the temp image path
+            $this->temp = null;
+        }
+        $this->file = null;
+    }
+    /**
+     * @ORM\PreRemove()
+     */
+    public function storeFilenameForRemove()
+    {
+        $this->temp = $this->getAbsolutePath();
+    }
+    /**
+     * @ORM\PostRemove()
+     */
+    public function removeUpload()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
+    }
+    /**
+     * Set path
+     *
+     * @param string $path
+     * @return User
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+        return $this;
+    }
+    /**
+     * Get path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
     }
 }
