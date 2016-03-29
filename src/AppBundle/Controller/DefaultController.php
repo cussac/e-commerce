@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use AppBundle\Entity\Tienda;
+use AppBundle\Entity\Producto;
 
 
 
@@ -22,23 +23,21 @@ class DefaultController extends Controller
     public function indexAction($id)
     {
         $repositoryTienda = $this ->getDoctrine()->getRepository("AppBundle:Tienda");
-        $em = $this->getDoctrine()->getManager();
 
         $params['id'] = $id;
 
         if ($id === -1)
         {
-            $tiendas = $repositoryTienda->findAll();
+            $tienda = $repositoryTienda->findBy(array(), array('id' => 'DESC'));
 
             $params = array(
-                'tiendas' => $tiendas,
+                'tienda' => $tienda,
             );
             return $this->render('AppBundle:Default:index.html.twig',$params);
         }
         else
         {
-            $tiendas = $em->getRepository('AppBundle:Tienda')
-                ->find($id);
+            $tiendas = $repositoryTienda->find($id);
             if(!$tiendas)
             {
                 throw $this->createNotFoundException(
@@ -46,7 +45,6 @@ class DefaultController extends Controller
             }
             else
             {
-
                 return $this->render(
                     'AppBundle:Default:indexId.html.twig',array('tiendas' => $tiendas));
             }
