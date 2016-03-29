@@ -19,7 +19,7 @@
             <div class="row">
 
                 <div class="col-md-3">
-                    <p class="lead">{{ tiendas.nombre }}</p>
+                    <p class="lead">{{ tiendas.nombre|title }}</p>
                     <div class="list-group">
 
                         <div class="list-group-item">
@@ -63,7 +63,7 @@
                                         {% if  tiendas.path == NULL %}
                                             <img alt="User Pic" src="{{ asset('uploads/documents/bg.png') }}" class="img-responsive">
                                         {% else %}
-                                            <img alt="User Pic" src="{{ asset('uploads/documents/'~ tiendas.path) }}" class="img-responsive">
+                                            <img alt="User Pic" src="{{ asset('uploads/documents/'~ tiendas.path ) }}" class="img-responsive">
                                         {% endif %}
                                     </div>
                                 </div>
@@ -79,13 +79,13 @@
                             <div class="col-sm-4 col-lg-4 col-md-4">
                                 <div class="thumbnail">
                                     {% if  producto.path == NULL %}
-                                        <img alt="User Pic" src="{{ asset('uploads/documents/producto.png') }}" class="img-responsive">
+                                        <img alt="User Pic" src="{{ asset('uploads/documents/producto.png') }}" class="img-rounded">
                                     {% else %}
-                                        <img alt="User Pic" src="{{ asset('uploads/documents/'~ producto.path) }}" class="img-responsive">
+                                        <img alt="User Pic" src="{{ asset('uploads/documents/'~ producto.path) }}" class="img-rounded">
                                     {% endif %}
                                     <div class="caption">
-                                        <h4 class="pull-right">{{ producto.precio }}</h4>
-                                        <h4><a href="#">{{ producto.nombre|slice(0,20) }}</a>
+                                        <h4 class="pull-right">{{ producto.precio }}€</h4>
+                                        <h4><a href="#">{{ producto.nombre|slice(0,17) }}</a>
                                         </h4>
                                         <p>{{ producto.descripcion|slice(0,100) }}...</p>
                                     </div>

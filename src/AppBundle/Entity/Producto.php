@@ -1,11 +1,9 @@
 <?php
-
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-
 
 /**
  * Producto
@@ -21,14 +19,11 @@ class Producto
      * @ORM\JoinColumn(name="tienda_id", referencedColumnName="id")
      */
     private $tienda;
-
     public function __construct()
     {
         $this->setFecha(new\DateTime(date('y-n-d H:i:s')));
     }
-
     private $temp;
-
     /**
      * @var integer
      *
@@ -37,7 +32,6 @@ class Producto
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var string
      *
@@ -48,7 +42,6 @@ class Producto
      *      maxMessage = "El nombre sólo puede tener {{ limit }} letras")
      */
     private $nombre;
-
     /**
      * @var string
      *
@@ -59,7 +52,6 @@ class Producto
      *      maxMessage = "La descripcion sólo puede tener {{ limit }} letras")
      */
     private $descripcion;
-
     /**
      * @var string
      *
@@ -67,7 +59,6 @@ class Producto
      * @Assert\NotBlank(message="El campo precio no puede quedarse vacío")
      */
     private $precio;
-
     /**
      * @var integer
      *
@@ -75,7 +66,6 @@ class Producto
      * @Assert\NotBlank(message="El campo cantidad no puede quedarse vacío")
      */
     private $cantidad;
-
     /**
      * @var string
      *
@@ -83,20 +73,17 @@ class Producto
      * @Assert\NotBlank(message="El campo peso no puede quedarse vacío")
      */
     private $peso;
-
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="fecha", type="datetime")
      */
     private $fecha;
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
-
     /**
      * @var string
      *
@@ -112,12 +99,11 @@ class Producto
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     public $path;
-    
+
     public function getId()
     {
         return $this->id;
     }
-
     /**
      * Set nombre
      *
@@ -127,20 +113,17 @@ class Producto
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
-
         return $this;
     }
-
     /**
      * Get nombre
      *
-     * @return string 
+     * @return string
      */
     public function getNombre()
     {
         return $this->nombre;
     }
-
     /**
      * Set descripcion
      *
@@ -150,20 +133,17 @@ class Producto
     public function setDescripcion($descripcion)
     {
         $this->descripcion = $descripcion;
-
         return $this;
     }
-
     /**
      * Get descripcion
      *
-     * @return string 
+     * @return string
      */
     public function getDescripcion()
     {
         return $this->descripcion;
     }
-
     /**
      * Set precio
      *
@@ -173,20 +153,17 @@ class Producto
     public function setPrecio($precio)
     {
         $this->precio = $precio;
-
         return $this;
     }
-
     /**
      * Get precio
      *
-     * @return string 
+     * @return string
      */
     public function getPrecio()
     {
         return $this->precio;
     }
-
     /**
      * Set cantidad
      *
@@ -196,20 +173,17 @@ class Producto
     public function setCantidad($cantidad)
     {
         $this->cantidad = $cantidad;
-
         return $this;
     }
-
     /**
      * Get cantidad
      *
-     * @return integer 
+     * @return integer
      */
     public function getCantidad()
     {
         return $this->cantidad;
     }
-
     /**
      * Set peso
      *
@@ -219,20 +193,17 @@ class Producto
     public function setPeso($peso)
     {
         $this->peso = $peso;
-
         return $this;
     }
-
     /**
      * Get peso
      *
-     * @return string 
+     * @return string
      */
     public function getPeso()
     {
         return $this->peso;
     }
-
     /**
      * Set fecha
      *
@@ -242,10 +213,8 @@ class Producto
     public function setFecha($fecha)
     {
         $this->fecha = $fecha;
-
         return $this;
     }
-
     /**
      * Get fecha
      *
@@ -255,7 +224,6 @@ class Producto
     {
         return $this->fecha;
     }
-
     /**
      * Set tienda
      *
@@ -265,20 +233,17 @@ class Producto
     public function setTienda(\AppBundle\Entity\Tienda $tienda = null)
     {
         $this->tienda = $tienda;
-
         return $this;
     }
-
     /**
      * Get tienda
      *
-     * @return \AppBundle\Entity\Tienda 
+     * @return \AppBundle\Entity\Tienda
      */
     public function getTienda()
     {
         return $this->tienda;
     }
-
     /**
      * Set categoria
      *
@@ -288,20 +253,17 @@ class Producto
     public function setCategoria($categoria)
     {
         $this->categoria = $categoria;
-
         return $this;
     }
-
     /**
      * Get categoria
      *
-     * @return string 
+     * @return string
      */
     public function getCategoria()
     {
         return $this->categoria;
     }
-
     /****IMAGENES****/
     /**
      * Sets file.
