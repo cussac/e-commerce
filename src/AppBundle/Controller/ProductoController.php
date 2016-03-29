@@ -177,4 +177,22 @@ class ProductoController extends Controller
             'AppBundle:Default:adminListaProducto.html.twig',$params);
     }
 
+    public function verAction(Request $request,$id)
+    {
+        $repositoryProducto = $this ->getDoctrine()->getRepository("AppBundle:Producto");
+        $params['id'] = $id;
+
+        $producto = $repositoryProducto->find($id);
+        if(!$producto)
+        {
+            throw $this->createNotFoundException(
+                'No existe nigun $producto con id '.$id);
+        }
+        else
+        {
+            return $this->render(
+                'AppBundle:Default:verProducto.html.twig',array('producto' => $producto));
+        }
+    }
+
 }

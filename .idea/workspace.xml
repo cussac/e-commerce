@@ -23,20 +23,70 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.twig" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig">
+      <file leaf-file-name="verProducto.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/verProducto.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="66" selection-start="4147" selection-end="4147" vertical-scroll-proportion="0.82566583" vertical-offset="650" max-vertical-offset="3420">
+            <state line="31" column="42" selection-start="1095" selection-end="1095" vertical-scroll-proportion="-3.5185184" vertical-offset="463" max-vertical-offset="2034">
+              <folding>
+                <element signature="e#12#39#0" expanded="true" />
+                <element signature="e#216#253#0" expanded="true" />
+                <element signature="e#301#338#0" expanded="true" />
+                <element signature="e#583#601#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="estilo.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/bundles/estilos/css/estilo.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="0" selection-start="948" selection-end="948" vertical-scroll-proportion="0.936694" vertical-offset="245" max-vertical-offset="1152">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductoType.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ProductoType.php">
+      <file leaf-file-name="indexId.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/indexId.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="95" selection-start="1783" selection-end="1788" vertical-scroll-proportion="-23.333334" vertical-offset="108" max-vertical-offset="1782">
-              <folding />
+            <state line="88" column="143" selection-start="4098" selection-end="4098" vertical-scroll-proportion="-28.666666" vertical-offset="810" max-vertical-offset="2088">
+              <folding>
+                <element signature="e#4017#4035#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="159" column="44" selection-start="9151" selection-end="9254" vertical-scroll-proportion="-17.25926" vertical-offset="2396" max-vertical-offset="3384">
+              <folding>
+                <element signature="e#9173#9191#0" expanded="true" />
+                <element signature="e#9656#9674#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductoController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProductoController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="189" column="9" selection-start="5834" selection-end="5834" vertical-scroll-proportion="-21.25926" vertical-offset="2828" max-vertical-offset="3654">
+              <folding>
+                <element signature="e#40#97#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Producto.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Producto.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="94" column="38" selection-start="2325" selection-end="2325" vertical-scroll-proportion="-62.666668" vertical-offset="0" max-vertical-offset="7092">
+              <folding>
+                <element signature="e#35#67#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,7 +101,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Comunes/navAdmin.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/adminIndex.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Comunes/404.html.twig" />
@@ -68,14 +117,16 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Tienda.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/ProductoType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/producto.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProductoController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/TiendaController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/adminListaProducto.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Producto.php" />
-        <option value="$PROJECT_DIR$/web/bundles/estilos/css/estilo.css" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/indexId.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProductoController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/indexId.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/verProducto.html.twig" />
+        <option value="$PROJECT_DIR$/web/bundles/estilos/css/estilo.css" />
       </list>
     </option>
   </component>
@@ -139,6 +190,86 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-commerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-commerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-commerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-commerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="estilos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-commerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-commerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="estilos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-commerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-commerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -179,7 +310,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Form" />
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-commerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-commerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -278,13 +431,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="695" column="16" selection-start="14846" selection-end="14846" vertical-scroll-proportion="0.0" vertical-offset="12085" max-vertical-offset="14112">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
         <state line="715" column="7" selection-start="15158" selection-end="15158" vertical-scroll-proportion="0.0" vertical-offset="12566" max-vertical-offset="13932">
           <folding />
         </state>
@@ -363,19 +509,9 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="46" selection-start="743" selection-end="743" vertical-scroll-proportion="0.6541618" vertical-offset="0" max-vertical-offset="1368" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Comunes/404.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="25" selection-start="92" selection-end="92" vertical-scroll-proportion="0.065375306" vertical-offset="0" max-vertical-offset="826" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/adminIndex.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="20" selection-start="530" selection-end="561" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="3006" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/bundles/estilos/font-awesome/css/font-awesome.css">
@@ -454,13 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Comunes/navAdmin.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="2685" selection-end="2745" vertical-scroll-proportion="0.6755448" vertical-offset="504" max-vertical-offset="1404">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/producto.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="14" selection-start="727" selection-end="727" vertical-scroll-proportion="0.45762712" vertical-offset="108" max-vertical-offset="1476">
@@ -512,34 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TiendaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="45" selection-start="4979" selection-end="4979" vertical-scroll-proportion="0.7384988" vertical-offset="2306" max-vertical-offset="3132">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProductoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="8" selection-start="2308" selection-end="2385" vertical-scroll-proportion="-13.259259" vertical-offset="1046" max-vertical-offset="3330">
-          <folding>
-            <element signature="e#40#97#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="39" selection-start="821" selection-end="821" vertical-scroll-proportion="-15.925926" vertical-offset="110" max-vertical-offset="1314">
-          <folding>
-            <element signature="e#40#99#0" expanded="true" />
-            <element signature="e#978#1013#0" expanded="true" />
-            <element signature="e#1367#1404#0" expanded="true" />
-            <element signature="e#1803#1843#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/adminListaProducto.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="58" selection-start="3238" selection-end="3248" vertical-scroll-proportion="-12.666667" vertical-offset="792" max-vertical-offset="1728">
@@ -561,22 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Producto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="38" selection-start="2325" selection-end="2325" vertical-scroll-proportion="1.783293" vertical-offset="219" max-vertical-offset="7092">
-          <folding>
-            <element signature="e#35#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/estilos/css/estilo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="29" selection-start="396" selection-end="396" vertical-scroll-proportion="0.5486518" vertical-offset="0" max-vertical-offset="853">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/tienda.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="12" selection-start="1555" selection-end="1609" vertical-scroll-proportion="1.0217918" vertical-offset="2" max-vertical-offset="1530">
@@ -584,23 +669,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/indexId.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/adminIndex.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="24" selection-start="1892" selection-end="1892" vertical-scroll-proportion="0.69733655" vertical-offset="270" max-vertical-offset="2088">
+        <state line="23" column="20" selection-start="530" selection-end="561" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="3006">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Comunes/navAdmin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="89" selection-start="1388" selection-end="1449" vertical-scroll-proportion="0.5883777" vertical-offset="0" max-vertical-offset="1404">
+          <folding>
+            <element signature="e#628#652#0" expanded="false" />
+            <element signature="e#1094#1112#0" expanded="false" />
+            <element signature="e#1406#1424#0" expanded="false" />
+            <element signature="e#2133#2153#0" expanded="false" />
+            <element signature="e#2341#2363#0" expanded="false" />
+            <element signature="e#2488#2517#0" expanded="false" />
+            <element signature="e#2787#2811#0" expanded="false" />
+            <element signature="e#2938#2968#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ProductoType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="95" selection-start="1783" selection-end="1788" vertical-scroll-proportion="-23.333334" vertical-offset="108" max-vertical-offset="1782">
+        <state line="43" column="95" selection-start="1783" selection-end="1788" vertical-scroll-proportion="0.77490777" vertical-offset="108" max-vertical-offset="1782">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="13" selection-start="1069" selection-end="1449" vertical-scroll-proportion="-22.592592" vertical-offset="272" max-vertical-offset="1314">
+          <folding>
+            <element signature="e#40#99#0" expanded="true" />
+            <element signature="e#978#1013#0" expanded="true" />
+            <element signature="e#1367#1404#0" expanded="true" />
+            <element signature="e#1803#1843#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="27" selection-start="464" selection-end="464" vertical-scroll-proportion="0.44314185" vertical-offset="0" max-vertical-offset="1440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TiendaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="175" column="45" selection-start="4979" selection-end="4979" vertical-scroll-proportion="0.7711864" vertical-offset="2279" max-vertical-offset="3132">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Producto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="38" selection-start="2325" selection-end="2325" vertical-scroll-proportion="-62.666668" vertical-offset="0" max-vertical-offset="7092">
+          <folding>
+            <element signature="e#35#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProductoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="9" selection-start="5834" selection-end="5834" vertical-scroll-proportion="-21.25926" vertical-offset="2828" max-vertical-offset="3654">
+          <folding>
+            <element signature="e#40#97#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="66" selection-start="4147" selection-end="4147" vertical-scroll-proportion="0.82566583" vertical-offset="650" max-vertical-offset="3420">
+        <state line="159" column="44" selection-start="9151" selection-end="9254" vertical-scroll-proportion="-17.25926" vertical-offset="2396" max-vertical-offset="3384">
+          <folding>
+            <element signature="e#9173#9191#0" expanded="true" />
+            <element signature="e#9656#9674#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/indexId.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="143" selection-start="4098" selection-end="4098" vertical-scroll-proportion="-28.666666" vertical-offset="810" max-vertical-offset="2088">
+          <folding>
+            <element signature="e#4017#4035#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/verProducto.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="42" selection-start="1095" selection-end="1095" vertical-scroll-proportion="-3.5185184" vertical-offset="463" max-vertical-offset="2034">
+          <folding>
+            <element signature="e#12#39#0" expanded="true" />
+            <element signature="e#216#253#0" expanded="true" />
+            <element signature="e#301#338#0" expanded="true" />
+            <element signature="e#583#601#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/estilos/css/estilo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="0" selection-start="948" selection-end="948" vertical-scroll-proportion="0.936694" vertical-offset="245" max-vertical-offset="1152">
           <folding />
         </state>
       </provider>

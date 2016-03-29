@@ -151,21 +151,19 @@
                                 <div class="col-sm-4 col-lg-4 col-md-4">
                                     <div class="thumbnail">
                                         {% if  producto.path == NULL %}
-                                        <img alt="User Pic" src="{{ asset('uploads/documents/producto.png') }}" class="img-responsive">
+                                            <img alt="User Pic" src="{{ asset('uploads/documents/producto.png') }}" class="img-responsive">
                                         {% else %}
-                                        <img alt="User Pic" src="{{ asset('uploads/documents/'~ producto.path) }}" class="img-responsive">
+                                            <img alt="User Pic" src="{{ asset('uploads/documents/'~ producto.path) }}" class="img-responsive">
                                         {% endif %}
                                         <div class="caption">
                                             <h4 class="pull-right">{{ producto.precio }}€</h4>
-                                            <h4><a href="#">{{ producto.nombre|slice(0,17) }}</a>
+                                            <h4><a href="{{ path("appBundle_producto",{"id":producto.id}) }}">{{ producto.nombre|slice(0,17) }}</a>
                                             </h4>
                                             <p>{{ producto.descripcion|slice(0,100) }}...</p>
                                         </div>
                                         <div class="ratings">
-                                            <p class="pull-right">15</p>
-                                            <p>
-                                                Comentarios
-                                            </p>
+                                            <p class="pull-right">Comentarios: 15</p>
+                                            <a href="{{ path("appBundle_homepage",{"id":tienda.id }) }}" class="small">{{ tienda.nombre }}</a>
                                         </div>
                                     </div>
                                 </div>

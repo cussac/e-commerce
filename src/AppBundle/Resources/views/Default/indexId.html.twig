@@ -86,7 +86,7 @@
                                     {% endif %}
                                     <div class="caption">
                                         <h4 class="pull-right">{{ producto.precio }}€</h4>
-                                        <h4><a href="#">{{ producto.nombre|slice(0,17) }}</a>
+                                        <h4><a href="{{ path("appBundle_producto",{"id":producto.id}) }}">{{ producto.nombre|slice(0,17) }}</a>
                                         </h4>
                                         <p>{{ producto.descripcion|slice(0,100) }}...</p>
                                     </div>

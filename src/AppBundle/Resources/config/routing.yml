@@ -18,6 +18,10 @@ appBundle_registro:
     path:    /registro/
     defaults: { _controller: AppBundle:User:registro }
 
+appBundle_producto:
+    path:    /producto/{id}
+    defaults: { _controller: AppBundle:Producto:ver }
+
 #ruta area privada#
 
 appBundle_admin_homepage:
