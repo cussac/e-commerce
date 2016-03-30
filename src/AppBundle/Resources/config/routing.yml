@@ -72,3 +72,9 @@ appBundle_admin_producto_cambio:
     requirements:
         id: \d+
 
+appBundle_admin_eliminar_producto:
+    path: /admin/eliminar/producto/{id}
+    defaults: { _controller: AppBundle:Producto:eliminar, id:-1}
+    requirements:
+        id: \d+
+

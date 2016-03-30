@@ -177,7 +177,7 @@ class ProductoController extends Controller
             'AppBundle:Default:adminListaProducto.html.twig',$params);
     }
 
-    public function verAction(Request $request,$id)
+    public function verAction($id)
     {
         $repositoryProducto = $this ->getDoctrine()->getRepository("AppBundle:Producto");
         $params['id'] = $id;
@@ -193,6 +193,29 @@ class ProductoController extends Controller
             return $this->render(
                 'AppBundle:Default:verProducto.html.twig',array('producto' => $producto));
         }
+    }
+
+    public function eliminarAction(Request $request,$id)
+    {
+        $repositoryProducto = $this ->getDoctrine()->getRepository("AppBundle:Producto");
+
+        $em = $this->getDoctrine()->getManager();
+        $producto = $repositoryProducto->find($id);
+
+        $em->remove($producto);
+        $em->flush();
+
+        $this->get('session')->getFlashBag()->add('error', 'Producto <strong>eliminado correctamente</strong>');
+
+        $userLogin = $this->getUser();
+        $sesion = $request->getSession();
+        $sesion->set('usuario_id',$userLogin->getId());
+        $tiendas = $userLogin->getTiendas();
+
+        $params = array('tiendas' => $tiendas,
+                        'producto'=> $producto);
+
+        return $this->render('AppBundle:Default:adminListaProducto.html.twig',$params);
     }
 
 }

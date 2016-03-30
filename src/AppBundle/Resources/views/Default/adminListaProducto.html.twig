@@ -71,10 +71,30 @@
                                                 <td class="text-center">{{ producto.precio }}</td>
                                                 <td class="text-center">{{ producto.cantidad }}</td>
                                                 <td class="text-center">{{ producto.fecha | date('d/m/Y - h:m') }}</td>
-                                                <td align="center"><!--EDITAR-->
-                                                    <a href="{{ path("appBundle_admin_producto_cambio",{"username": app.user.username , "id": producto.id}) }}" data-original-title="Edit this user" data-toggle="tooltip" data-placement="top" title="Editar Producto" type="button" class="btn btn-sm btn-success">
-                                                        <i class="glyphicon glyphicon-edit"></i>
+                                                <td class="text-center"><!--EDITAR-->
+                                                    <a href="{{ path("appBundle_admin_producto_cambio",{"username": app.user.username , "id": producto.id}) }}"
+                                                       data-original-title="Edit this user"
+                                                       data-toggle="tooltip"
+                                                       data-placement="top"
+                                                       title="Editar Producto"
+                                                       type="button"
+                                                       class="btn btn-sm btn-success">
+                                                       <span class="glyphicon glyphicon-edit"></span>
                                                     </a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p>
+                                                        <a href="{{ path('appBundle_admin_eliminar_producto', {'id' : producto.id}) }}"
+                                                          class="btn btn-danger btn-sm btn_eliminar"
+                                                          data-title="Eliminar Entrada"
+                                                          data-toggle="tooltip"
+                                                          data-placement="top"
+                                                          title="Eliminar Producto"
+                                                          type="button"
+                                                          onclick="return confirm('Deseas eliminar el producto {{ producto.nombre|upper }}?')">
+                                                          <span class="glyphicon glyphicon-trash"></span>
+                                                        </a>
+                                                    </p>
                                                 </td>
                                             </tr>
                                         {% endfor %}
