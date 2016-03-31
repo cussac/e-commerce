@@ -1,0 +1,65 @@
+<div class="col-md-3">
+    <p class="lead">easycommerce.es</p>
+    <div class="list-group">
+
+        <div class="list-group-item">
+            <h4 class="bg-info text-center">Redes Sociales</h4>
+            <ul class="list-inline">
+                <li>
+                    <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-instagram fa-fw fa-3x"></i></a>
+                </li>
+            </ul>
+        </div>
+
+        <br>
+
+        <div class="list-group-item">
+            <h4 class="bg-info text-center">Buscar Tienda</h4>
+            <div class="input-group">
+                <form name="formBusqueda" action="{{ path("appBundle_buscar_tienda_nombre") }}" method="POST">
+                    <input list="nombreT"  class="form-control" name="nombreT" placeholder="Por Nombre">
+                    <datalist id="nombreT">
+                        {% for tienda in tienda %}
+                            <option value="{{ tienda.nombre }}">{{ tienda.nombre|title }}</option>
+                        {% endfor %}
+                    </datalist>
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit" value="buscar">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </form>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="list-group-item">
+            <h4 class="bg-info text-center">Buscar Producto</h4>
+            <div class="input-group">
+                <form name="formBusqueda" action="{{ path("appBundle_buscar_producto_nombre") }}" method="POST">
+                    <input list="nombreP"  class="form-control" name="nombreP"  placeholder="Por Nombre">
+                    <datalist id="nombreP">
+                        {% for tienda in tienda %}
+                            {% for producto in tienda.productos %}
+                                <option value="{{ producto.nombre }}">{{ producto.nombre|title }}</option>
+                            {% endfor %}
+                        {% endfor %}
+                    </datalist>
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit" value="buscar">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

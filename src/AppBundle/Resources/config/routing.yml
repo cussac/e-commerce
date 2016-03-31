@@ -22,6 +22,14 @@ appBundle_producto:
     path:    /producto/{id}
     defaults: { _controller: AppBundle:Producto:ver }
 
+appBundle_buscar_tienda_nombre:
+    path: /buscar/tienda/nombre/
+    defaults: { _controller: AppBundle:Dql:buscarTN }
+
+appBundle_buscar_producto_nombre:
+    path: /buscar/producto/nombre/
+    defaults: { _controller: AppBundle:Dql:buscarPN }
+
 #ruta area privada#
 
 appBundle_admin_homepage:

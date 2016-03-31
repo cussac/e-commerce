@@ -185,8 +185,9 @@ class ProductoController extends Controller
         $producto = $repositoryProducto->find($id);
         if(!$producto)
         {
-            throw $this->createNotFoundException(
-                'No existe nigun $producto con id '.$id);
+            return $this->render('@App/Comunes/404.html.twig',array(
+                'mensaje' => "No existe nigun producto con id".$producto->getId()
+            ));
         }
         else
         {
@@ -205,7 +206,7 @@ class ProductoController extends Controller
         $em->remove($producto);
         $em->flush();
 
-        $this->get('session')->getFlashBag()->add('error', 'Producto <strong>eliminado correctamente</strong>');
+        $this->get('session')->getFlashBag()->add('error', ' Producto <strong>'.$producto->getNombre().'</strong> eliminado correctamente');
 
         $userLogin = $this->getUser();
         $sesion = $request->getSession();

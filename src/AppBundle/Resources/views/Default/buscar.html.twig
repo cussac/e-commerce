@@ -1,0 +1,62 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+    {% block title %}
+        easy-commerce
+    {% endblock %}
+
+    {% block nav %}
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            {% include 'AppBundle:Comunes:navConLog.html.twig' %}
+        {% else %}
+            {% include 'AppBundle:Comunes:navSinLog.html.twig' %}
+        {% endif %}
+    {% endblock %}
+
+    {% block contenido %}
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    {% if resultado | length == 0 %}
+                        <h3 class='text-center'>
+                            <i class='fa fa-thumbs-down'></i> No hay resultado para mostrar!
+                        </h3>
+                    {% else %}<!--LISTADO PRODUCTO-->
+                        <table id="tabla_lista_post" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Imagen</th>
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Categoría</th>
+                                    <th class="text-center">Descripción</th>
+                                    <th class="text-center">Número de productos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for tienda in resultado %}
+                                    <tr>
+                                        {% if  tienda.path == NULL %}
+                                            <td class="text-center">
+                                                <img alt="User Pic" src="{{ asset('uploads/documents/bg.png') }}" class="img-rounded" width="50">
+                                            </td>
+                                        {% else %}
+                                            <td class="text-center">
+                                                <img alt="User Pic" src="{{ asset('uploads/documents/'~ tienda.path) }}" class="img-rounded" width="40">
+                                            </td>
+                                        {% endif %}
+                                        <td class="text-center"><a href="{{ path("appBundle_homepage",{"id":tienda.id }) }}">{{ tienda.nombre }}</a></td>
+                                        <td class="text-center">{{ tienda.categoria }}</td>
+                                        <td class="text-center">{{ tienda.descripcion }}</td>
+                                        <td class="text-center">{{ tienda.productos | length }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+
+    {% endblock %}
