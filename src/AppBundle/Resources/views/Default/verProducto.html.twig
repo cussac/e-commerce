@@ -33,12 +33,11 @@
                         {% if  producto.path == NULL %}
                             <img alt="User Pic" src="{{ asset('uploads/documents/producto.png') }}" class="img-rounded">
                         {% else %}
-                            <img alt="User Pic" src="{{ asset('uploads/documents/'~ producto.path) }}" class="img-responsive">
+                            <img style="height: 100%" alt="User Pic" src="{{ asset('uploads/documents/'~ producto.path) }}" class="img-responsive">
                         {% endif %}
                         <div class="caption-full">
-                            <h4 class="pull-right">{{ producto.precio }}€</h4>
-                            <h4><a href="#">{{ producto.nombre }}</a>
-                            </h4>
+                            <h4 class="pull-right" style="color: #245269">{{ producto.precio }}€</h4>
+                            <h4 style="color: #31b0d5">{{ producto.nombre }}</h4>
                             <p>{{ producto.descripcion }}</p>
                         </div>
                         <div class="ratings">

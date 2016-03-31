@@ -52,7 +52,7 @@ class Tienda
      * @ORM\Column(name="nombre", type="string", length=64, unique=true)
      * @Assert\NotBlank(message="El campo nombre no puede quedarse vacío")
      * @Assert\Length(
-     *      max = 60,
+     *      max = 21,
      *      maxMessage = "El nombre sólo puede tener {{ limit }} letras")
      */
     private $nombre;

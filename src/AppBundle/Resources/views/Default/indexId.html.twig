@@ -64,9 +64,6 @@
 
                         <div class="col-md-12">
                             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                </ol>
                                 <div class="carousel-inner">
                                     <div class="item active">
                                         {% if  tiendas.path == NULL %}
@@ -81,7 +78,6 @@
 
                     </div>
 
-
                     <div class="row">
 
                         {% for producto in tiendas.productos %}
@@ -94,8 +90,7 @@
                                     {% endif %}
                                     <div class="caption">
                                         <h4 class="pull-right">{{ producto.precio }}€</h4>
-                                        <h4><a href="{{ path("appBundle_producto",{"id":producto.id}) }}">{{ producto.nombre|slice(0,17) }}</a>
-                                        </h4>
+                                        <h4><a href="{{ path("appBundle_producto",{"id":producto.id}) }}">{{ producto.nombre|slice(0,17) }}</a></h4>
                                         <p>{{ producto.descripcion|slice(0,100) }}...</p>
                                     </div>
                                     <div class="ratings">
