@@ -26,7 +26,7 @@ class TiendaType extends AbstractType
             ->add('descripcion','textarea', array(
                     'label' => false,
                     'attr'=>array(
-                        'placeholder' => 'Descripción de la tienda',
+                        'placeholder' => 'Eslogan de la tienda',
                         'class'=>'form-control',
                     ),
             ))

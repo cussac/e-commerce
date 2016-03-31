@@ -63,7 +63,7 @@ class Tienda
      * @ORM\Column(name="descripcion", type="string", length=255)
      * @Assert\NotBlank(message="El campo descripcion no puede quedarse vacío")
      * @Assert\Length(
-     *      max = 250,
+     *      max = 140,
      *      maxMessage = "La descripcion sólo puede tener {{ limit }} letras")
      */
     private $descripcion;

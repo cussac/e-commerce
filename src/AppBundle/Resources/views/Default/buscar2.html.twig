@@ -24,13 +24,13 @@
                         </h3>
                     {% else %}<!--LISTADO PRODUCTO-->
                         <table id="tabla_lista_post" class="table table-bordered table-striped">
-                            <thead>
+                            <thead class="bg-success text-center">
                                 <tr>
                                     <th class="text-center">Imagen</th>
                                     <th class="text-center">Nombre</th>
                                     <th class="text-center">Categoría</th>
                                     <th class="text-center">Descripción</th>
-                                    <th class="text-center">Número de productos</th>
+                                    <th class="text-center">Nombre de la Tienda</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,10 +45,10 @@
                                                 <img alt="User Pic" src="{{ asset('uploads/documents/'~ producto.path) }}" class="img-rounded" width="40">
                                             </td>
                                         {% endif %}
-                                        <td class="text-center"><a href="{{ path("appBundle_homepage",{"id":producto.id }) }}">{{ producto.nombre }}</a></td>
+                                        <td class="text-center"><a href="{{ path("appBundle_producto",{"id":producto.id }) }}">{{ producto.nombre }}</a></td>
                                         <td class="text-center">{{ producto.categoria }}</td>
                                         <td class="text-center">{{ producto.descripcion }}</td>
-                                        <td class="text-center">{{ producto.tienda.nombre }}</td>
+                                        <td class="text-center"><a href="{{ path("appBundle_homepage",{"id":producto.id }) }}">{{ producto.tienda.nombre }}</a></td>
                                     </tr>
                                 {% endfor %}
                             </tbody>
