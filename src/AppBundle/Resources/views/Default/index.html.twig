@@ -59,7 +59,7 @@
                                             <p>{{ producto.descripcion|slice(0,100) }}...</p>
                                         </div>
                                         <div class="ratings">
-                                            <p class="pull-right">Comentarios: 15</p>
+                                            <p class="pull-right">Comentarios: {{ producto.comentarios| length }}</p>
                                             <a href="{{ path("appBundle_homepage",{"id":tienda.id }) }}" class="small">{{ tienda.nombre }}</a>
                                         </div>
                                     </div>

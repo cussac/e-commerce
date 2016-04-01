@@ -30,6 +30,12 @@ appBundle_buscar_producto_nombre:
     path: /buscar/producto/nombre/
     defaults: { _controller: AppBundle:Dql:buscarPN }
 
+appBundle_comentario:
+    path: /comentario/{id}
+    defaults: { _controller: AppBundle:Comentario:comentario }
+    requirements:
+        page: \d+
+
 #ruta area privada#
 
 appBundle_admin_homepage:
