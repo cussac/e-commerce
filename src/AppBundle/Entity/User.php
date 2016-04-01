@@ -23,9 +23,17 @@ class User implements UserInterface
      * @ORM\OneToMany(targetEntity="Tienda", mappedBy="user", orphanRemoval=true)
      */
     private $tiendas;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Comentario", mappedBy="user", orphanRemoval=true)
+     */
+    private $comentarios;
+
     public function __construct()
     {
         $this->tiendas = new ArrayCollection();
+        $this->cometarios = new ArrayCollection();
+
         $this->setFecha(new\DateTime(date('y-n-d H:i:s')));
         $this->setTokenRegistro($this->randomString());
         $this->setSalt($this->randomString());
@@ -687,5 +695,38 @@ class User implements UserInterface
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * Add comentarios
+     *
+     * @param \AppBundle\Entity\Comentario $comentarios
+     * @return User
+     */
+    public function addComentario(\AppBundle\Entity\Comentario $comentarios)
+    {
+        $this->comentarios[] = $comentarios;
+
+        return $this;
+    }
+
+    /**
+     * Remove comentarios
+     *
+     * @param \AppBundle\Entity\Comentario $comentarios
+     */
+    public function removeComentario(\AppBundle\Entity\Comentario $comentarios)
+    {
+        $this->comentarios->removeElement($comentarios);
+    }
+
+    /**
+     * Get comentarios
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComentarios()
+    {
+        return $this->comentarios;
     }
 }

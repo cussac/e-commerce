@@ -66,6 +66,7 @@ class ProductoType extends AbstractType
             ))
             ->add('peso', 'number', array(
                 'label' => false,
+                'required'=> false,
                 'attr'=>array(
                     'placeholder' => 'Peso',
                     'class'=>'form-control',

@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Producto
@@ -19,8 +20,17 @@ class Producto
      * @ORM\JoinColumn(name="tienda_id", referencedColumnName="id")
      */
     private $tienda;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Comentario", mappedBy="producto")
+     *
+     */
+    private $comentarios;
+
     public function __construct()
     {
+        $this->comentarios = new ArrayCollection();
+
         $this->setFecha(new\DateTime(date('y-n-d H:i:s')));
     }
     private $temp;
@@ -69,7 +79,7 @@ class Producto
     /**
      * @var string
      *
-     * @ORM\Column(name="peso", type="decimal")
+     * @ORM\Column(name="peso", type="decimal", nullable=true)
      * @Assert\NotBlank(message="El campo peso no puede quedarse vacío")
      */
     private $peso;
@@ -384,5 +394,38 @@ class Producto
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * Add comentarios
+     *
+     * @param \AppBundle\Entity\Comentario $comentarios
+     * @return Producto
+     */
+    public function addComentario(\AppBundle\Entity\Comentario $comentarios)
+    {
+        $this->comentarios[] = $comentarios;
+
+        return $this;
+    }
+
+    /**
+     * Remove comentarios
+     *
+     * @param \AppBundle\Entity\Comentario $comentarios
+     */
+    public function removeComentario(\AppBundle\Entity\Comentario $comentarios)
+    {
+        $this->comentarios->removeElement($comentarios);
+    }
+
+    /**
+     * Get comentarios
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComentarios()
+    {
+        return $this->comentarios;
     }
 }

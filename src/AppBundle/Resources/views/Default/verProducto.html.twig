@@ -19,11 +19,9 @@
             <div class="row">
 
                 <div class="col-md-3">
-                    <p><a href="{{ path("appBundle_homepage",{"id":producto.tienda.id }) }}" class="lead">{{ producto.tienda.nombre }}</a></p>
-                    <div class="list-group">
-                        <a href="#" class="list-group-item active">Category 1</a>
-                        <a href="#" class="list-group-item">Category 2</a>
-                        <a href="#" class="list-group-item">Category 3</a>
+                    <div class="list-group-item">
+                        <p class="bg-info text-center lead"><a href="{{ path("appBundle_homepage",{"id":producto.tienda.id }) }}" class="lead">{{ producto.tienda.nombre }}</a></p>
+                        <p class="small">{{ producto.tienda.descripcion }}</p>
                     </div>
                 </div>
 
@@ -36,67 +34,58 @@
                             <img style="height: 100%" alt="User Pic" src="{{ asset('uploads/documents/'~ producto.path) }}" class="img-responsive">
                         {% endif %}
                         <div class="caption-full">
-                            <h4 class="pull-right" style="color: #245269">{{ producto.precio }}€</h4>
+                            <h4 class="pull-right" style="color: #40695e">{{ producto.precio }}€</h4>
                             <h4 style="color: #31b0d5">{{ producto.nombre }}</h4>
                             <p>{{ producto.descripcion }}</p>
                         </div>
                         <div class="ratings">
-                            <p class="pull-right">3 reviews</p>
+                            <p class="pull-right">Comentarios: {{ producto.comentarios| length }}</p>
                             <p>{{ producto.categoria }}</p>
                         </div>
                     </div>
 
-                    <div class="well">
+                    <section id="comments" class="row">
+                        <h4>
+                            <strong>COMENTARIOS</strong>
+                        </h4>
 
-                        <div class="text-right">
-                            <a class="btn btn-success">Leave a Review</a>
-                        </div>
+                        <hr class="colorgraph">
+                        <ol id="comment-list" class="clearfix">
 
-                        <hr>
+                                <li class="comment col-xs-12" id="">
+                                    <div class="row">
+                                        <div class="col-sm-1">
+                                            <div class="thumbnail">
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                                Anonymous
-                                <span class="pull-right">10 days ago</span>
-                                <p>This product was great in terms of quality. I would definitely buy another!</p>
-                            </div>
-                        </div>
+                                            </div><!-- /thumbnail -->
+                                        </div><!-- /col-sm-1 -->
+                                        <div class="col-sm-10">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <strong></strong>
+                                                    <span class="text-muted"></span></div>
+                                                <div class="panel-body">
+                                                    <strong class="comment-title"></strong>
+                                                    <p><p>
+                                                </div><!-- /panel-body -->
+                                            </div><!-- /panel-heading -->
+                                        </div><!-- /panel panel-default -->
+                                    </div><!-- /col-sm-10 -->
 
-                        <hr>
+                                </li>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                                Anonymous
-                                <span class="pull-right">12 days ago</span>
-                                <p>I've alredy ordered another one!</p>
-                            </div>
-                        </div>
+                        </ol>
+                    </section>
+                    <!-- /section#comments -->
 
-                        <hr>
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                                Anonymous
-                                <span class="pull-right">15 days ago</span>
-                                <p>I've seen some better than this, but not at this price. I definitely recommend this item.</p>
-                            </div>
-                        </div>
-
+                    <div class="text-right">
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}<!--SI EL USUARIO HA HECHO LOGGIN-->
+                        <a href="" class="btn btn-success" onclick="Modalbox.show() "><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            AÑADIR COMENTARIO</a><br><br>
+                        {% else %}
+                            <a href="" class="btn btn-success" onclick="Comment"><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span>
+                                AÑADIR COMENTARIO</a><br><br>
+                        {% endif %}
                     </div>
 
                 </div>
