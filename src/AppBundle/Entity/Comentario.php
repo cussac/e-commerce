@@ -52,7 +52,20 @@ class Comentario
      * @ORM\Column(name="contenido", type="string", length=140)
      */
     private $contenido;
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=64, nullable=true)
+     *
+     * @Assert\Length(
+     *      max="64",
+     *      maxMessage=" : El campo NOMBRE: debe tener máximo {{ limit }} caracteres."
+     * )
+     * @Assert\Regex(
+     *      pattern="/^[a-zA-Z\s]+$/",
+     *      message="El campo NOMBRE: sólo puede contener letras")
+     */
+    private $nombre;
     /**
      * @var \DateTime
      *
@@ -184,5 +197,28 @@ class Comentario
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     * @return Comentario
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
     }
 }

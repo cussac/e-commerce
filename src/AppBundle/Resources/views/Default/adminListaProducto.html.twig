@@ -50,26 +50,28 @@
                                             <th class="text-center">Categoría</th>
                                             <th class="text-center">Precio</th>
                                             <th class="text-center">Cantidad</th>
+                                            <th class="text-center">Comentarios</th>
                                             <th class="text-center">Fecha</th>
-                                            <th class="text-center" colspan="2">Acciones</th>
+                                            <th class="text-center" colspan="3">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {% for producto in tienda.productos %}
                                             <tr>
                                                 {% if  producto.path == NULL %}
-                                                <td class="text-center">
-                                                    <img alt="User Pic" src="{{ asset('uploads/documents/bg.png') }}" class="img-rounded" width="50">
-                                                </td>
+                                                    <td class="text-center">
+                                                        <img alt="User Pic" src="{{ asset('uploads/documents/bg.png') }}" class="img-rounded" width="50">
+                                                    </td>
                                                 {% else %}
-                                                <td class="text-center">
-                                                    <img alt="User Pic" src="{{ asset('uploads/documents/'~ producto.path) }}" class="img-rounded" width="40">
-                                                </td>
+                                                    <td class="text-center">
+                                                        <img alt="User Pic" src="{{ asset('uploads/documents/'~ producto.path) }}" class="img-rounded" width="40">
+                                                    </td>
                                                 {% endif %}
                                                 <td class="text-center">{{ producto.nombre }}</td>
                                                 <td class="text-center">{{ producto.categoria }}</td>
                                                 <td class="text-center">{{ producto.precio }}</td>
                                                 <td class="text-center">{{ producto.cantidad }}</td>
+                                                <td class="text-center">{{ producto.comentarios | length }}</td>
                                                 <td class="text-center">{{ producto.fecha | date('d/m/Y - h:m') }}</td>
                                                 <td class="text-center"><!--EDITAR-->
                                                     <a href="{{ path("appBundle_admin_producto_cambio",{"username": app.user.username , "id": producto.id}) }}"
@@ -93,6 +95,20 @@
                                                           type="button"
                                                           onclick="return confirm('Deseas eliminar el producto {{ producto.nombre|upper }}?')">
                                                           <span class="glyphicon glyphicon-trash"></span>
+                                                        </a>
+                                                    </p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p>
+                                                        <a href="{{ path('appBundle_admin_eliminar_producto', {'id' : producto.id}) }}"
+                                                           class="btn btn-warning btn-sm"
+                                                           data-title="Eliminar Entrada"
+                                                           data-toggle="tooltip"
+                                                           data-placement="top"
+                                                           title="Comentarios"
+                                                           type="button"
+                                                           onclick="return confirm('Deseas eliminar el producto {{ producto.nombre|upper }}?')">
+                                                            <span class="glyphicon glyphicon-comment"></span>
                                                         </a>
                                                     </p>
                                                 </td>

@@ -45,6 +45,13 @@ class ComentarioController extends Controller {
                         'placeholder' => '140 caracteres máximo'
                     ))
             )
+            ->add('nombre','text',array(
+                'required'=> false,
+                'attr'  => array(
+                    'placeholder' => '(no es obligatorio)',
+                    'class'=>'form-control',
+                ),
+            ))
             ->getForm();
 
         if ($request->server->get('REQUEST_METHOD') == 'POST')
@@ -64,6 +71,7 @@ class ComentarioController extends Controller {
         $params['producto'] = $idProducto;
         $params['titulo'] = '';
         $params['contenido'] = '';
+        $params['nombre'] = '';
         $params['user'] = $usuario;
         $params['form'] = $form->createView();
 
