@@ -370,7 +370,7 @@ class Tienda
     {
         return null === $this->path
             ? null
-            : $this->getUploadRootDir().'/'.$this->id.'.'.$this->path;
+            : $this->getUploadRootDir().'/'.$this->path;
     }
     public function getWebPath()
     {

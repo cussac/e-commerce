@@ -204,7 +204,6 @@ class ProductoController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $producto = $repositoryProducto->find($id);
-
         $em->remove($producto);
         $em->flush();
 
