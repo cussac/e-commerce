@@ -1,0 +1,79 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+    {% block title %}
+        easy-commerce admin
+    {% endblock %}
+
+    {% block nav %}
+        {% include 'AppBundle:Comunes:navAdmin.html.twig' %}
+    {% endblock %}
+
+    {% block contenido %}
+
+        {% block menssage %}
+            {% include 'AppBundle:Comunes:flashMessage.html.twig' %}
+        {% endblock %}
+
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        {% for tienda in tiendas %}
+                            {% if tienda.productos | length == 0 %}
+                                <h3 class='text-center'>
+                                    <i class='fa fa-thumbs-down'></i> No hay comentarios para mostrar!
+                                </h3>
+                            {% else %}<!--LISTADO COMENTARIOS-->
+                                <table id="tabla_lista_post" class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">Nombre</th>
+                                        <th class="text-center">Titulo</th>
+                                        <th class="text-center">Contenido</th>
+                                        <th class="text-center">Poducto</th>
+                                        <th class="text-center">Fecha</th>
+                                        <th class="text-center" colspan="1">Acciones</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for producto in tienda.productos %}
+                                        {% for comentario in producto.comentarios %}
+                                            <tr>
+                                                {% if comentario.nombre == null %}
+                                                    <td class="text-center">{{ comentario.user.username }}</td>
+                                                {% else %}
+                                                    <td class="text-center">{{ comentario.nombre }}</td>
+                                                {% endif %}
+                                                <td class="text-center">{{ comentario.titulo }}</td>
+                                                <td class="text-center">{{ comentario.contenido }}</td>
+                                                <td class="text-center">{{ comentario.producto.nombre }}</td>
+                                                <td class="text-center">{{ comentario.fecha | date('d/m/Y - h:m') }}</td>
+                                                <td class="text-center">
+                                                    <p>
+                                                        <a href="{{ path('appBundle_admin_eliminar_comentario', {'id' : comentario.id}) }}"
+                                                           class="btn btn-danger btn-sm btn_eliminar"
+                                                           data-title="Eliminar Entrada"
+                                                           data-toggle="tooltip"
+                                                           data-placement="top"
+                                                           title="Eliminar Producto"
+                                                           type="button"
+                                                           onclick="return confirm('¿Deseas eliminar el comentario {{ comentario.titulo|upper }}?')">
+                                                            <span class="glyphicon glyphicon-trash"></span>
+                                                        </a>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% endif %}
+                        {% endfor %}
+
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div><!-- /#page-wrapper -->
+        </div>
+
+    {% endblock %}

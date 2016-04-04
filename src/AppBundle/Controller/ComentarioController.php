@@ -81,4 +81,52 @@ class ComentarioController extends Controller {
 
     }
 
+    public function listaAction(Request $request)
+    {
+
+        $repositoryTienda = $this ->getDoctrine()->getRepository("AppBundle:Tienda");
+        $repositoryUser = $this ->getDoctrine()->getRepository("AppBundle:User");
+
+        $userLogin = $this->getUser();
+        $sesion = $request->getSession();
+        $sesion->set('usuario_id',$userLogin->getId());
+
+        $tiendas = $userLogin->getTiendas();
+
+        $usuario = $this->getUser();
+        $userId = $repositoryUser ->find($usuario);
+        $tiendaId = $repositoryTienda->find($userId);
+
+        $productos = $userLogin->getTiendas($tiendaId);
+
+        $params = array('tiendas' => $tiendas,
+            'producto'=> $productos);
+
+        return $this->render(
+            'AppBundle:Default:adminListaComentario.html.twig',$params);
+    }
+
+    public function eliminarAction(Request $request,$id)
+    {
+        $repositoryComentario = $this ->getDoctrine()->getRepository("AppBundle:Comentario");
+
+        $em = $this->getDoctrine()->getManager();
+        $comentario = $repositoryComentario->find($id);
+
+        $em->remove($comentario);
+        $em->flush();
+
+        $this->get('session')->getFlashBag()->add('error', ' Comentario <strong>'.$comentario->getTitulo().'</strong> eliminado correctamente');
+
+        $userLogin = $this->getUser();
+        $sesion = $request->getSession();
+        $sesion->set('usuario_id',$userLogin->getId());
+        $tiendas = $userLogin->getTiendas();
+
+        $params = array('tiendas' => $tiendas,
+            'producto'=> $comentario);
+
+        return $this->render('AppBundle:Default:adminListaComentario.html.twig',$params);
+    }
+
 } 

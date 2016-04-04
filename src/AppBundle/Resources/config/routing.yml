@@ -92,3 +92,13 @@ appBundle_admin_eliminar_producto:
     requirements:
         id: \d+
 
+appBundle_admin_comentario_lista:
+    path: /admin/lista/comentario/
+    defaults: {_controller: AppBundle:Comentario:lista }
+
+appBundle_admin_eliminar_comentario:
+    path: /admin/eliminar/comentario/{id}
+    defaults: { _controller: AppBundle:Comentario:eliminar, id:-1}
+    requirements:
+        id: \d+
+

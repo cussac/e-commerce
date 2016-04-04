@@ -157,7 +157,9 @@ class ProductoController extends Controller
     public function listaAction(Request $request)
     {
 
-        $em = $this->getDoctrine()->getManager();
+        $repositoryTienda = $this ->getDoctrine()->getRepository("AppBundle:Tienda");
+        $repositoryUser = $this ->getDoctrine()->getRepository("AppBundle:User");
+
         $userLogin = $this->getUser();
         $sesion = $request->getSession();
         $sesion->set('usuario_id',$userLogin->getId());
@@ -165,8 +167,8 @@ class ProductoController extends Controller
         $tiendas = $userLogin->getTiendas();
 
         $usuario = $this->getUser();
-        $userId = $em->getRepository("AppBundle:User")->find($usuario);
-        $tiendaId = $em->getRepository("AppBundle:Tienda")->find($userId);
+        $userId = $repositoryUser ->find($usuario);
+        $tiendaId = $repositoryTienda->find($userId);
 
         $productos = $userLogin->getTiendas($tiendaId);
 

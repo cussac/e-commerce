@@ -31,6 +31,11 @@
                                         <i class="glyphicon glyphicon-print "></i> Imprimir listado
                                     </a>
                                 </span>
+                                <span id="imprimir-listado" class="btn-actions"><!--COMENTARIOS-->
+                                    <a class="btn btn-warning" href="{{ path('appBundle_admin_comentario_lista') }}">
+                                        <i class="glyphicon glyphicon-comment "></i> Ver Comentarios
+                                    </a>
+                                </span>
                             </div>
                         </div>
 
@@ -52,7 +57,7 @@
                                             <th class="text-center">Cantidad</th>
                                             <th class="text-center">Comentarios</th>
                                             <th class="text-center">Fecha</th>
-                                            <th class="text-center" colspan="3">Acciones</th>
+                                            <th class="text-center" colspan="2">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -93,22 +98,8 @@
                                                           data-placement="top"
                                                           title="Eliminar Producto"
                                                           type="button"
-                                                          onclick="return confirm('Deseas eliminar el producto {{ producto.nombre|upper }}?')">
+                                                          onclick="return confirm('¿Deseas eliminar el producto {{ producto.nombre|upper }}?')">
                                                           <span class="glyphicon glyphicon-trash"></span>
-                                                        </a>
-                                                    </p>
-                                                </td>
-                                                <td class="text-center">
-                                                    <p>
-                                                        <a href="{{ path('appBundle_admin_eliminar_producto', {'id' : producto.id}) }}"
-                                                           class="btn btn-warning btn-sm"
-                                                           data-title="Eliminar Entrada"
-                                                           data-toggle="tooltip"
-                                                           data-placement="top"
-                                                           title="Comentarios"
-                                                           type="button"
-                                                           onclick="return confirm('Deseas eliminar el producto {{ producto.nombre|upper }}?')">
-                                                            <span class="glyphicon glyphicon-comment"></span>
                                                         </a>
                                                     </p>
                                                 </td>
