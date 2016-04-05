@@ -6,11 +6,32 @@
 
     {% block nav %}
 
-        {% include 'AppBundle:Comunes:navSinLog.html.twig' %}
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ path('homepage') }}">
+                        <img src="{{ asset('logo2.png') }}" alt="easy-commerce.es" />
+                    </a>
+                </div>
+            </div>
+            <!-- /.container -->
+        </nav>
 
     {% endblock %}
 
     {% block contenido %}
+
+        {% block menssage %}
+            {% include 'AppBundle:Comunes:flashMessage.html.twig' %}
+        {% endblock %}
 
         ADIOS TE ESPERAMOS PROXIMAMENTE
 
