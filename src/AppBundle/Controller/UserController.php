@@ -298,4 +298,21 @@ class UserController extends Controller
         return $this->render('AppBundle:Default:adminPerfil.html.twig',$params);
     }
 
+    public function eliminarAction($id)
+    {
+        $repositoryUser = $this ->getDoctrine()->getRepository("AppBundle:User");
+
+        $em = $this->getDoctrine()->getManager();
+        $user = $repositoryUser->find($id);
+
+        $em->remove($user);
+        $em->flush();
+
+        $this->get('session')->getFlashBag()->add('error', ' Ususario <strong>'.$user->getUsername().'</strong> eliminado correctamente');
+
+        $params = array('user'=> $user);
+
+        return $this->render('AppBundle:Default:adios.html.twig');
+    }
+
 } 

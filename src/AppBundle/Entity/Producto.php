@@ -22,7 +22,7 @@ class Producto
     private $tienda;
 
     /**
-     * @ORM\OneToMany(targetEntity="Comentario", mappedBy="producto")
+     * @ORM\OneToMany(targetEntity="Comentario", mappedBy="producto",orphanRemoval=true)
      *
      */
     private $comentarios;

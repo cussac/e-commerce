@@ -179,4 +179,27 @@ class TiendaController extends Controller
             'AppBundle:Default:adminPerfilTienda.html.twig',$params);
     }
 
+    public function eliminarAction(Request $request,$id)
+    {
+        $repositoryTienda = $this ->getDoctrine()->getRepository("AppBundle:Tienda");
+
+        $em = $this->getDoctrine()->getManager();
+        $tienda = $repositoryTienda->find($id);
+
+        $em->remove($tienda);
+        $em->flush();
+
+        $this->get('session')->getFlashBag()->add('error', ' Tienda <strong>'.$tienda->getNombre().'</strong> eliminada correctamente');
+
+        $userLogin = $this->getUser();
+        $sesion = $request->getSession();
+        $sesion->set('usuario_id',$userLogin->getId());
+        $tiendas = $userLogin->getTiendas();
+
+        $params = array('tiendas' => $tiendas,
+            'tienda'=> $tienda);
+
+        return $this->render('AppBundle:Default:adminIndex.html.twig',$params);
+    }
+
 } 

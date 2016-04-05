@@ -102,3 +102,15 @@ appBundle_admin_eliminar_comentario:
     requirements:
         id: \d+
 
+appBundle_admin_eliminar_tienda:
+    path: /admin/eliminar/tienda/{id}
+    defaults: { _controller: AppBundle:Tienda:eliminar, id:-1}
+    requirements:
+        id: \d+
+
+appBundle_admin_eliminar_user:
+    path: /admin/eliminar/user/{id}
+    defaults: { _controller: AppBundle:User:eliminar, id:-1}
+    requirements:
+        id: \d+
+

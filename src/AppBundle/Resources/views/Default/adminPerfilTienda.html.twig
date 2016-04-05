@@ -128,13 +128,19 @@
                     </tr>
                 {% endif %}
                 <tr>
-                    <td class="col-md-3 col-md-offset-3"></td>
                     <td class="col-md-3 col-md-offset-3">
-                    <span>
-                        <a class="btn btn-success" href="{{ path('appBundle_admin_tienda_cambio',{"username":app.user.username,"id":tienda.id}) }}">
-                            <i class="glyphicon glyphicon-edit"></i> Editar Tienda
-                        </a>
-                    </span>
+                        <span>
+                            <a class="btn btn-danger" href="{{ path('appBundle_admin_eliminar_tienda', {'id' : tienda.id}) }}" onclick="return confirm('¿Deseas eliminar la tienda {{ tienda.nombre|upper }}?')">
+                                <i class="glyphicon glyphicon-trash"></i> Eliminar Tienda
+                            </a>
+                        </span>
+                    </td>
+                    <td class="col-md-3 col-md-offset-3">
+                        <span>
+                            <a class="btn btn-success" href="{{ path('appBundle_admin_tienda_cambio',{"username":app.user.username,"id":tienda.id}) }}">
+                                <i class="glyphicon glyphicon-edit"></i> Editar Tienda
+                            </a>
+                        </span>
                     </td>
                 </tr>
 

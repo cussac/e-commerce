@@ -76,7 +76,13 @@
             </tr>
 
             <tr>
-                <td class="col-md-3 col-md-offset-3"></td>
+                <td class="col-md-3 col-md-offset-3">
+                    <span>
+                        <a class="btn btn-danger" href="{{ path('appBundle_admin_eliminar_user', {'id' : app.user.id}) }}" onclick="return confirm('¿Deseas eliminar el perfil {{ app.user.username|upper }}?')">
+                            <i class="glyphicon glyphicon-trash"></i> Eliminar Perfil
+                        </a>
+                    </span>
+                </td>
                 <td class="col-md-3 col-md-offset-3">
                     <span>
                         <a class="btn btn-success" href="{{ path('appBundle_admin_user_cambio',{"username":app.user.username,"id":app.user.id}) }}">
