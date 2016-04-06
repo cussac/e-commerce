@@ -5,7 +5,11 @@
     {% endblock %}
 
     {% block nav %}
-        {% include 'AppBundle:Comunes:navAdmin.html.twig' %}
+        {% if app.user.rol == "ROLE_SUPER_ADMIN" %}
+            {% include 'AppBundle:Comunes:navSuperAdmin.html.twig' %}
+        {% else %}
+            {% include 'AppBundle:Comunes:navAdmin.html.twig' %}
+        {% endif %}
     {% endblock %}
 
     {% block contenido %}
@@ -21,74 +25,124 @@
                 <div class="row">
 
     {# PANEL USUARIO #}
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-user fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div>nombre usuario: </div>
-                                        <div><strong>{{ app.user.username }}</strong></div>
+                    {% if app.user.rol == "ROLE_SUPER_ADMIN" %}
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-user fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div>usuarios registrados: </div>
+                                            <div><strong>{{ user|length }}</strong></div>
+                                        </div>
                                     </div>
                                 </div>
+                                <a href="{{ path('appBundle_admin_lista_user') }}">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">Ver Usuarios Registrados</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
                             </div>
-                            <a href="{{ path('appBundle_admin_user') }}">
-                                <div class="panel-footer">
-                                    <span class="pull-left">Ver Perfil</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
                         </div>
-                    </div>
+                    {% else %}
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-user fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div>nombre usuario: </div>
+                                            <div><strong>{{ app.user.username }}</strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ path('appBundle_admin_user') }}">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">Ver Perfil</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
 
     {# PANEL TIENDA #}
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-shopping-cart fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                    {% if tiendas | length == 0 %}
-                                        <div>nombre tienda: </div>
-                                        <div><strong>tienda no creada</strong></div>
-                                    {% else  %}
-                                        {% for tienda in tiendas %}
-                                            <div>nombre tienda: </div>
-                                            <div><strong>{{ tienda.nombre }}</strong></div>
-                                        {% endfor %}
-                                    {% endif %}
+                    {% if app.user.rol == "ROLE_SUPER_ADMIN" %}
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-green">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-shopping-cart fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div>tiendas registradas: </div>
+                                            <div><strong>{{ tienda|length }}</strong></div>
+                                        </div>
                                     </div>
                                 </div>
+                                    <a href="{{ path("appBundle_admin_tienda") }}">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">Ver Tiendas Registradas</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
                             </div>
-                            {% if tiendas | length == 0 %}
-                                <a href="{{ path("appBundle_admin_tienda") }}">
-                                    <div class="panel-footer">
-                                        <span class="pull-left">Crear Tienda</span>
-                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </a>
-                            {% else  %}
-                                {% for tienda in tiendas %}
-                                <a href="{{ path('appBundle_admin_tienda_perfil') }}">
-                                    <div class="panel-footer">
-                                        <span class="pull-left">Perfil Tienda</span>
-                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </a>
-                                {% endfor %}
-                            {% endif %}
                         </div>
-                    </div>
+                    {% else %}
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-green">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-shopping-cart fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            {% if tiendas | length == 0 %}
+                                                <div>nombre tienda: </div>
+                                                <div><strong>tienda no creada</strong></div>
+                                            {% else  %}
+                                                {% for tienda in tiendas %}
+                                                    <div>nombre tienda: </div>
+                                                    <div><strong>{{ tienda.nombre }}</strong></div>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% if tiendas | length == 0 %}
+                                    <a href="{{ path("appBundle_admin_tienda") }}">
+                                        <div class="panel-footer">
+                                            <span class="pull-left">Crear Tienda</span>
+                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </a>
+                                {% else  %}
+                                    {% for tienda in tiendas %}
+                                        <a href="{{ path('appBundle_admin_tienda_perfil') }}">
+                                            <div class="panel-footer">
+                                                <span class="pull-left">Perfil Tienda</span>
+                                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </a>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
 
     {# PANEL PRODUCTO #}
-                    {% for tienda in tiendas %}
+                    {% if app.user.rol == "ROLE_SUPER_ADMIN" %}
                         <div class="col-lg-3 col-md-6">
                             <div class="panel panel-yellow">
                                 <div class="panel-heading">
@@ -97,36 +151,61 @@
                                             <i class="fa fa-gift fa-5x"></i>
                                         </div>
                                         <div class="col-xs-9 text-right">
-                                            {% if tienda.productos | length == 0 %}
-                                                <div>número de productos: </div>
-                                                <div><strong>0</strong></div>
-                                            {% else %}
-                                                <div>número de productos: </div>
-                                                <div><strong>{{ tienda.productos | length }}</strong></div>
-                                            {% endif %}
+                                            <div>productos registrados: </div>
+                                            <div><strong>{{ producto|length }}</strong></div>
                                         </div>
                                     </div>
                                 </div>
-                                {% if tienda.productos | length == 0 %}
-                                    <a href="{{ path("appBundle_admin_producto") }}">
-                                        <div class="panel-footer">
-                                            <span class="pull-left">Añadir Primer Producto</span>
-                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </a>
-                                {% else %}
-                                    <a href="{{ path("appBundle_admin_producto_lista") }}">
-                                        <div class="panel-footer">
-                                            <span class="pull-left">Ver Lista Productos</span>
-                                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </a>
-                                {% endif %}
+                                <a href="{{ path("appBundle_admin_producto") }}">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">Ver Productos Registrados</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                    {% endfor %}
+                    {% else %}
+                        {% for tienda in tiendas %}
+                            <div class="col-lg-3 col-md-6">
+                                <div class="panel panel-yellow">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <i class="fa fa-gift fa-5x"></i>
+                                            </div>
+                                            <div class="col-xs-9 text-right">
+                                                {% if tienda.productos | length == 0 %}
+                                                    <div>número de productos: </div>
+                                                    <div><strong>0</strong></div>
+                                                {% else %}
+                                                    <div>número de productos: </div>
+                                                    <div><strong>{{ tienda.productos | length }}</strong></div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% if tienda.productos | length == 0 %}
+                                        <a href="{{ path("appBundle_admin_producto") }}">
+                                            <div class="panel-footer">
+                                                <span class="pull-left">Añadir Primer Producto</span>
+                                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </a>
+                                    {% else %}
+                                        <a href="{{ path("appBundle_admin_producto_lista") }}">
+                                            <div class="panel-footer">
+                                                <span class="pull-left">Ver Lista Productos</span>
+                                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
 
     {# PANEL DUDA #}
                     <div class="col-lg-3 col-md-6">

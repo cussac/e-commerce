@@ -114,3 +114,7 @@ appBundle_admin_eliminar_user:
     requirements:
         id: \d+
 
+appBundle_admin_lista_user:
+    path: /admin/lista/user/
+    defaults: {_controller: AppBundle:User:lista }
+

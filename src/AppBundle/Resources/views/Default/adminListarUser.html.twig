@@ -1,0 +1,98 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+    {% block title %}
+        easy-commerce admin
+    {% endblock %}
+
+    {% block nav %}
+        {% include 'AppBundle:Comunes:navSuperAdmin.html.twig' %}
+    {% endblock %}
+
+    {% block contenido %}
+
+        {% block menssage %}
+            {% include 'AppBundle:Comunes:flashMessage.html.twig' %}
+        {% endblock %}
+
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+
+                                <table id="tabla_lista_post" class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">Imagen</th>
+                                        <th class="text-center">Nombre del Usuario</th>
+                                        <th class="text-center">Email del Usuario</th>
+                                        <th class="text-center">Tienda del Usuario</th>
+                                        <th class="text-center">Fecha de Registro</th>
+                                        <th class="text-center" colspan="2">Acciones</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for usuario in usuarios%}
+                                        {% if  usuario.rol == "ROLE_SUPER_ADMIN" or usuario.rol == "ROLE_ANONIMO"%}
+
+                                            <!--EVITAMOS QUE SALGA EL USUARIO ROLE_SUPER_ADMIN-->
+
+                                        {% else %}
+                                        <tr>
+                                            {% if  usuario.path == NULL %}
+                                                <td class="text-center">
+                                                    <img alt="User Pic" src="{{ asset('uploads/documents/interrogante.jpg') }}" class="img-rounded" width="50">
+                                                </td>
+                                            {% else %}
+                                                <td class="text-center">
+                                                    <img alt="User Pic" src="{{ asset('uploads/documents/'~ usuario.path) }}" class="img-rounded" width="40">
+                                                </td>
+                                            {% endif %}
+                                            <td class="text-center">{{ usuario.username }}</td>
+                                            <td class="text-center">{{ usuario.email }}</td>
+
+                                            {% if usuario.tiendas|length == 0 %}
+                                                <td class="text-center">Tienda no registrada</td>
+                                            {% else %}
+                                                {% for tienda in  usuario.tiendas %}
+                                                    <td class="text-center">{{ tienda.nombre|upper }}</td>
+                                                {% endfor %}
+                                            {% endif %}
+
+                                            <td class="text-center">{{ usuario.fecha | date('d/m/Y - h:m') }}</td>
+                                            <td class="text-center"><!--EDITAR-->
+                                                <a href=""
+                                                   data-original-title="Edit this user"
+                                                   data-toggle="tooltip"
+                                                   data-placement="top"
+                                                   title="Editar Producto"
+                                                   type="button"
+                                                   class="btn btn-sm btn-success">
+                                                    <span class="glyphicon glyphicon-edit"></span>
+                                                </a>
+                                            </td>
+                                            <td class="text-center">
+                                                <p>
+                                                    <a href=""
+                                                       class="btn btn-danger btn-sm btn_eliminar"
+                                                       data-title="Eliminar Entrada"
+                                                       data-toggle="tooltip"
+                                                       data-placement="top"
+                                                       title="Eliminar Producto"
+                                                       type="button"
+                                                       onclick="return confirm('¿Deseas eliminar el usuario {{ usuario.nombre|upper }}?')">
+                                                        <span class="glyphicon glyphicon-trash"></span>
+                                                    </a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div><!-- /#page-wrapper -->
+        </div>
+
+    {% endblock %}

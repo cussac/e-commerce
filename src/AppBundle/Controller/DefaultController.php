@@ -55,11 +55,22 @@ class DefaultController extends Controller
     {
         $userLogin = $this->getUser();
         $sesion = $request->getSession();
+
+
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository("AppBundle:User")->findAll();
+        $tienda = $em->getRepository("AppBundle:Tienda")->findAll();
+        $producto = $em->getRepository("AppBundle:Producto")->findAll();
+
+
         $sesion->set('usuario_id',$userLogin->getId());
 
         $tiendas = $userLogin->getTiendas();
 
-        $params = array('tiendas' => $tiendas);
+        $params = array('tiendas' => $tiendas,
+                        'user' => $user,
+                        'tienda' => $tienda,
+                        'producto' => $producto);
 
         return $this->render(
             'AppBundle:Default:adminIndex.html.twig',$params);
