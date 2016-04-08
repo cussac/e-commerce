@@ -1,0 +1,78 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+    {% block title %}
+        easy-commerce admin
+    {% endblock %}
+
+    {% block nav %}
+        {% include 'AppBundle:Comunes:navSuperAdmin.html.twig' %}
+    {% endblock %}
+
+    {% block contenido %}
+
+        {% block menssage %}
+            {% include 'AppBundle:Comunes:flashMessage.html.twig' %}
+        {% endblock %}
+
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <table id="tabla_lista_post" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th class="text-center">Imagen</th>
+                                <th class="text-center">Nombre del Usuario</th>
+                                <th class="text-center">Tienda del Usuario</th>
+                                <th class="text-center">Nª de Productos</th>
+                                <th class="text-center">Fecha de Registro</th>
+                                <th class="text-center" colspan="1">Acciones</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                                {% for tienda in tiendas %}
+                                    <tr>
+                                        {% if  tienda.path == NULL %}
+                                            <td class="text-center">
+                                                <img alt="User Pic" src="{{ asset('uploads/documents/bg.png') }}" class="img-rounded" width="50">
+                                            </td>
+                                        {% else %}
+                                            <td class="text-center">
+                                                <img alt="User Pic" src="{{ asset('uploads/documents/'~ tienda.path) }}" class="img-rounded" width="40">
+                                            </td>
+                                        {% endif %}
+                                        <td class="text-center">{{ tienda.user.username }}</td>
+
+                                        <td class="text-center">{{ tienda.nombre|upper }}</td>
+
+                                        <td class="text-center">{{ tienda.productos|length }}</td>
+
+                                        <td class="text-center">{{ tienda.fecha | date('d/m/Y - h:m') }}</td>
+
+                                        <td class="text-center">
+                                            <p>
+                                                <a href=""
+                                                   class="btn btn-danger btn-sm btn_eliminar"
+                                                   data-title="Eliminar Entrada"
+                                                   data-toggle="tooltip"
+                                                   data-placement="top"
+                                                   title="Eliminar Producto"
+                                                   type="button"
+                                                   onclick="return confirm('¿Deseas eliminar el usuario {{ tienda.nombre|upper }}?')">
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                </a>
+                                            </p>
+                                        </td>
+                                    </tr>
+        {% endfor %}
+                            </tbody>
+                        </table>
+
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div><!-- /#page-wrapper -->
+        </div>
+
+    {% endblock %}

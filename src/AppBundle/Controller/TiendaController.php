@@ -202,4 +202,26 @@ class TiendaController extends Controller
         return $this->render('AppBundle:Default:adminIndex.html.twig',$params);
     }
 
+    public function listaAction()
+    {
+        $userLogin = $this->getUser();
+        $sesion = $this->getRequest()->getSession();
+        $sesion->set('usuario_id',$userLogin->getId());
+        $em = $this->getDoctrine()->getManager();
+
+        if(in_array("ROLE_SUPER_ADMIN",$userLogin->getRoles()))
+        {
+            $tiendas = $em->getRepository("AppBundle:Tienda")->findAll();
+        }
+        else
+        {
+            $this->get('session')->getFlashBag()->add('error', 'No tienes permiso para acceder');
+            return $this->redirect($this->generateUrl("appBundle_homepage"));
+        }
+
+        $params = array('tiendas' => $tiendas);
+
+        return $this->render('AppBundle:Default:adminListarTienda.html.twig',$params);
+    }
+
 } 

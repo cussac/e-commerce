@@ -118,3 +118,11 @@ appBundle_admin_lista_user:
     path: /admin/lista/user/
     defaults: {_controller: AppBundle:User:lista }
 
+appBundle_admin_lista_tienda:
+    path: /admin/lista/tienda/
+    defaults: {_controller: AppBundle:Tienda:lista }
+
+appBundle_admin_lista_producto:
+    path: /admin/lista/productos/
+    defaults: {_controller: AppBundle:Producto:listaAdmin }
+
